@@ -1,36 +1,70 @@
-import { HttpClientModule } from '@angular/common/http';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 import { expect } from '@jest/globals';
-import { SessionService } from 'src/app/core/service/session.service';
+import { TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
+import { By } from '@angular/platform-browser';
 
 import { ListComponent } from './list.component';
+import { SessionApiService } from '../../../../core/service/session-api.service';
+import { SessionService } from '../../../../core/service/session.service';
 
-describe('ListComponent', () => {
-  let component: ListComponent;
-  let fixture: ComponentFixture<ListComponent>;
+describe('ListComponent (integration)', () => {
+  const sessionApiMock = {
+    all: jest.fn(),
+  };
 
-  const mockSessionService = {
-    sessionInformation: {
-      admin: true
-    }
+  function makeSessionService(admin: boolean) {
+    return {
+      sessionInformation: { id: 1, admin, token: 't', username: 'u' },
+    } as any;
   }
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ListComponent],
-      imports: [HttpClientModule, MatCardModule, MatIconModule],
-      providers: [{ provide: SessionService, useValue: mockSessionService }]
-    })
-      .compileComponents();
+    jest.clearAllMocks();
 
-    fixture = TestBed.createComponent(ListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    sessionApiMock.all.mockReturnValue(
+      of([
+        { id: 1, name: 'S1', date: '2026-01-01', teacher_id: 1, description: 'D1', users: [] },
+        { id: 2, name: 'S2', date: '2026-01-02', teacher_id: 2, description: 'D2', users: [] },
+      ] as any)
+    );
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should show Create and Edit buttons for admin', async () => {
+    await TestBed.configureTestingModule({
+      imports: [ListComponent],
+      providers: [
+        { provide: SessionApiService, useValue: sessionApiMock },
+        { provide: SessionService, useValue: makeSessionService(true) },
+      ],
+    }).compileComponents();
+
+    const fixture = TestBed.createComponent(ListComponent);
+    fixture.detectChanges();
+
+    const createBtn = fixture.debugElement.query(By.css('button[routerLink="create"]'));
+    expect(createBtn).toBeTruthy();
+
+    // On a 2 sessions => 2 boutons detail, et 2 boutons edit (admin)
+    const editBtns = fixture.debugElement.queryAll(By.css('button[ng-reflect-router-link^="update"]'));
+    expect(editBtns.length).toBe(2);
+  });
+
+  it('should hide Create and Edit buttons for non-admin', async () => {
+    await TestBed.configureTestingModule({
+      imports: [ListComponent],
+      providers: [
+        { provide: SessionApiService, useValue: sessionApiMock },
+        { provide: SessionService, useValue: makeSessionService(false) },
+      ],
+    }).compileComponents();
+
+    const fixture = TestBed.createComponent(ListComponent);
+    fixture.detectChanges();
+
+    const createBtn = fixture.debugElement.query(By.css('button[routerLink="create"]'));
+    expect(createBtn).toBeNull();
+
+    const editBtns = fixture.debugElement.queryAll(By.css('button[ng-reflect-router-link^="update"]'));
+    expect(editBtns.length).toBe(0);
   });
 });
