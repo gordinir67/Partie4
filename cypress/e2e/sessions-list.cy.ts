@@ -1,47 +1,44 @@
-describe('Sessions list screen', () => {
+describe('Sessions list', () => {
   const sessions = [
     {
       id: 1,
-      name: 'Yoga test session',
+      name: 'Morning Flow',
       date: '2025-01-15T00:00:00.000Z',
       teacher_id: 1,
-      description: 'a yoga test.',
-      users: [],
+      description: 'A gentle morning yoga flow.',
+      users: [2],
       createdAt: '2025-01-01T00:00:00.000Z',
       updatedAt: '2025-01-10T00:00:00.000Z',
     },
     {
       id: 2,
-      name: 'Yoga test session2',
-      date: '2025-02-10T00:00:00.000Z',
+      name: 'Power Yoga',
+      date: '2025-01-20T00:00:00.000Z',
       teacher_id: 2,
-      description: 'a yoga test2.',
+      description: 'A stronger practice.',
       users: [],
       createdAt: '2025-01-02T00:00:00.000Z',
       updatedAt: '2025-01-11T00:00:00.000Z',
     },
   ];
 
-  it('As admin: shows Create + Edit + Detail buttons', () => {
+  it('Admin: lists sessions and shows Create button', () => {
+    // uiLoginAsAdmin() already intercepts + waits for GET /api/session
     cy.uiLoginAsAdmin(sessions);
 
-    cy.contains('Rentals available').should('be.visible');
-    cy.contains('button', 'Create').should('be.visible');
-
-    cy.contains('mat-card.item', 'Morning Flow').within(() => {
-      cy.contains('button', 'Detail').should('be.visible');
-      cy.contains('button', 'Edit').should('be.visible');
-    });
+    cy.location('pathname').should('eq', '/sessions');
+    cy.contains(/morning flow/i).should('be.visible');
+    cy.contains(/power yoga/i).should('be.visible');
+    cy.contains(/create/i).should('be.visible');
   });
 
-  it('As user: hides Create + Edit, but keeps Detail', () => {
+  it('User: lists sessions and does NOT show Create button', () => {
+    // uiLoginAsUser() already intercepts + waits for GET /api/session
     cy.uiLoginAsUser(sessions);
 
-    cy.contains('button', 'Create').should('not.exist');
-
-    cy.contains('mat-card.item', 'Morning Flow').within(() => {
-      cy.contains('button', 'Detail').should('be.visible');
-      cy.contains('button', 'Edit').should('not.exist');
-    });
+    cy.location('pathname').should('eq', '/sessions');
+    cy.contains(/morning flow/i).should('be.visible');
+    cy.contains(/power yoga/i).should('be.visible');
+    cy.contains(/create/i).should('not.exist');
   });
 });

@@ -1,5 +1,3 @@
-import 'cypress';
-
 describe('Auth guard', () => {
   it('redirects to login if user is not authenticated', () => {
     // Some Angular runtime errors can surface as uncaught exceptions during navigation.

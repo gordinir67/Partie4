@@ -6,6 +6,8 @@ type LoginUser = {
   firstName: string;
   lastName: string;
   admin: boolean;
+  token: string;
+  type: string;
 };
 
 declare global {
@@ -24,6 +26,8 @@ const DEFAULT_ADMIN: LoginUser = {
   firstName: 'Admin',
   lastName: 'User',
   admin: true,
+  token: 'fake-jwt-admin',
+  type: 'Bearer',
 };
 
 const DEFAULT_USER: LoginUser = {
@@ -32,6 +36,8 @@ const DEFAULT_USER: LoginUser = {
   firstName: 'Regular',
   lastName: 'User',
   admin: false,
+  token: 'fake-jwt-user',
+  type: 'Bearer',
 };
 
 const DEFAULT_SESSIONS = [
@@ -48,12 +54,13 @@ const DEFAULT_SESSIONS = [
 ];
 
 Cypress.Commands.add('uiLogin', (user: LoginUser, sessions = DEFAULT_SESSIONS) => {
-  cy.intercept('POST', '/api/auth/login', {
+  cy.intercept('POST', '**/api/auth/login', {
     statusCode: 200,
     body: user,
   }).as('login');
 
-  cy.intercept('GET', '/api/session', {
+  // Intercept list sessions (this call happens right after login redirect)
+  cy.intercept('GET', '**/api/session*', {
     statusCode: 200,
     body: sessions,
   }).as('getSessions');
@@ -65,7 +72,8 @@ Cypress.Commands.add('uiLogin', (user: LoginUser, sessions = DEFAULT_SESSIONS) =
 
   cy.wait('@login');
   cy.wait('@getSessions');
-  cy.url().should('include', '/sessions');
+
+  cy.location('pathname').should('eq', '/sessions');
 });
 
 Cypress.Commands.add('uiLoginAsAdmin', (sessions = DEFAULT_SESSIONS) => {

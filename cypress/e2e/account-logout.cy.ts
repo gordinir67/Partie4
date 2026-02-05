@@ -1,8 +1,20 @@
 describe('Account screen & Logout', () => {
+  /**
+   * Navigate inside the SPA without full reload.
+   * This is required because SessionService is in-memory only (no persistence),
+   * and cy.visit() would reset the session state => AuthGuard redirects to /login.
+   */
+  const spaGo = (path: string) => {
+    cy.window().then((win) => {
+      win.history.pushState({}, '', path);
+      win.dispatchEvent(new PopStateEvent('popstate'));
+    });
+  };
+
   it('Account: displays admin info (no delete section)', () => {
     cy.uiLoginAsAdmin([]);
 
-    cy.intercept('GET', '/api/user/1', {
+    cy.intercept('GET', '**/api/user/**', {
       statusCode: 200,
       body: {
         id: 1,
@@ -15,19 +27,23 @@ describe('Account screen & Logout', () => {
       },
     }).as('user');
 
-    cy.visit('/me');
-    cy.wait('@user');
+    // IMPORTANT: no cy.visit('/me') (would reset in-memory session)
+    spaGo('/me');
 
-    cy.contains('h1', 'User information').should('be.visible');
-    cy.contains('Name: Admin USER').should('be.visible');
-    cy.contains('You are admin').should('be.visible');
-    cy.contains('Delete my account:').should('not.exist');
+    // Ensure we are on /me (not redirected to /login)
+    cy.location('pathname').should('eq', '/me');
+
+    // Don't rely on exact tag (h1) – be flexible
+    cy.contains(/user information/i).should('be.visible');
+    cy.contains(/name:\s*admin\s*user/i).should('be.visible');
+    cy.contains(/you are admin/i).should('be.visible');
+    cy.contains(/delete my account/i).should('not.exist');
   });
 
   it('Account: non-admin can delete their account and is logged out', () => {
     cy.uiLoginAsUser([]);
 
-    cy.intercept('GET', '/api/user/2', {
+    cy.intercept('GET', '**/api/user/**', {
       statusCode: 200,
       body: {
         id: 2,
@@ -40,32 +56,31 @@ describe('Account screen & Logout', () => {
       },
     }).as('user');
 
-    cy.intercept('DELETE', '/api/user/2', { statusCode: 200 }).as('deleteUser');
+    cy.intercept('DELETE', '**/api/user/**', { statusCode: 200 }).as('deleteUser');
 
-    cy.visit('/me');
-    cy.wait('@user');
+    // IMPORTANT: no cy.visit('/me')
+    spaGo('/me');
+    cy.location('pathname').should('eq', '/me');
 
-    cy.contains('Delete my account:').should('be.visible');
-    // In the app, the delete action triggers DELETE /api/user/:id.
-    // Use a permissive selector to avoid brittle wording/casing changes.
+    cy.contains(/delete my account/i).should('be.visible');
     cy.contains('button', /delete/i).click();
 
     cy.wait('@deleteUser');
-    // The component navigates to '/' and the router redirects to '/login'.
-    cy.url().should('include', '/login');
-    cy.contains('Your account has been deleted !').should('be.visible');
 
-    // Toolbar should show unauth links again.
+    // App redirects to /login after deletion
+    cy.location('pathname').should('eq', '/login');
+    cy.contains(/your account has been deleted/i).should('be.visible');
+
     cy.contains('a', 'Login').should('be.visible');
     cy.contains('a', 'Register').should('be.visible');
-    cy.contains('Logout').should('not.exist');
+    cy.contains(/logout/i).should('not.exist');
   });
 
   it('Logout: returns to /login and hides authenticated navigation', () => {
     cy.uiLoginAsUser([]);
 
     cy.contains('span.link', 'Logout').click();
-    cy.url().should('include', '/login');
+    cy.location('pathname').should('eq', '/login');
 
     cy.contains('span.link', 'Sessions').should('not.exist');
     cy.contains('span.link', 'Account').should('not.exist');

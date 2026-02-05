@@ -2,7 +2,7 @@ describe('Login spec', () => {
   it('Login successfull', () => {
     cy.visit('/login')
 
-    cy.intercept('POST', '/api/auth/login', {
+    cy.intercept('POST', '**/api/auth/login', {
       body: {
         id: 1,
         username: 'userName',
@@ -15,7 +15,7 @@ describe('Login spec', () => {
     cy.intercept(
       {
         method: 'GET',
-        url: '/api/session',
+        url: '**/api/session*',
       },
       []).as('session')
 
