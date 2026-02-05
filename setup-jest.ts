@@ -1,30 +1,18 @@
-import 'jest-preset-angular/setup-jest';
+import { setupZoneTestEnv } from 'jest-preset-angular/setup-env/zone';
 
-/* global mocks for jsdom */
-const mock = () => {
-  let storage: { [key: string]: string } = {};
-  return {
-    getItem: (key: string) => (key in storage ? storage[key] : null),
-    setItem: (key: string, value: string) => (storage[key] = value || ''),
-    removeItem: (key: string) => delete storage[key],
-    clear: () => (storage = {}),
-  };
+setupZoneTestEnv();
+
+/**
+ * JSDOM ne sait pas parser certains CSS Angular Material/CDK (ex: @layer).
+ * On filtre UNIQUEMENT ce message précis.
+ */
+const originalError = console.error;
+
+console.error = (...args: any[]) => {
+  const msg = String(args?.[0] ?? "");
+
+  if (msg.includes("Could not parse CSS stylesheet")) return;
+  if (msg.includes("Not implemented: HTMLCanvasElement.prototype.getContext")) return;
+
+  originalError(...args);
 };
-
-Object.defineProperty(window, 'localStorage', { value: mock() });
-Object.defineProperty(window, 'sessionStorage', { value: mock() });
-Object.defineProperty(window, 'getComputedStyle', {
-  value: () => ['-webkit-appearance'],
-});
-
-Object.defineProperty(document.body.style, 'transform', {
-  value: () => {
-    return {
-      enumerable: true,
-      configurable: true,
-    };
-  },
-});
-
-/* output shorter and more meaningful Zone error stack traces */
-// Error.stackTraceLimit = 2;
