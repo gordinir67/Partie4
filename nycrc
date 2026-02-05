@@ -1,12 +1,12 @@
 {
   "extends": "@istanbuljs/nyc-config-typescript",
   "all": true,
-  "include": [
-    "src/app/**/*.ts"
-  ],
+  "extension": [".ts"],
+  "include": ["src/app/**/*.ts"],
+  "excludeAfterRemap": true,
   "exclude": [
-    "./coverage/**",    
-    "./dist/**",
+    "coverage/**",
+    "dist/**",
     "cypress/**",
     "src/main.ts",
     "src/polyfills.ts",
@@ -14,10 +14,7 @@
     "**/*.module.ts",
     "**/*.spec.ts",
     "**/test.ts",
-    "./src/main.ts",
-    "**/*.conf.js",
-    "**/*.spec.ts",  
-    "src/app/**/guards/**"
+    "**/*.conf.js"
   ],
   "reporter": ["text-summary", "lcov"],
   "check-coverage": false

@@ -43,10 +43,10 @@ const DEFAULT_USER: LoginUser = {
 const DEFAULT_SESSIONS = [
   {
     id: 1,
-    name: 'Morning Flow',
+    name: 'Yoga test session',
     date: '2025-01-15T00:00:00.000Z',
     teacher_id: 1,
-    description: 'A gentle morning yoga flow.',
+    description: 'a yoga test.',
     users: [2],
     createdAt: '2025-01-01T00:00:00.000Z',
     updatedAt: '2025-01-10T00:00:00.000Z',
