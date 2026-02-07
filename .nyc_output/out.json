@@ -1,6 +1,6 @@
 {
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\polyfills.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\polyfills.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\polyfills.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\polyfills.ts",
     "statementMap": {},
     "fnMap": {},
     "branchMap": {},
@@ -11,7 +11,7 @@
       "version": 3,
       "names": [],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\polyfills.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\polyfills.ts"
       ],
       "sourcesContent": [
         "/**\r\n * This file includes polyfills needed by Angular and is loaded before the app.\r\n * You can add your own extra polyfills to this file.\r\n *\r\n * This file is divided into 2 sections:\r\n *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.\r\n *   2. Application imports. Files imported after ZoneJS that should be loaded before your main\r\n *      file.\r\n *\r\n * The current setup is for so-called \"evergreen\" browsers; the last versions of browsers that\r\n * automatically update themselves. This includes recent versions of Safari, Chrome (including\r\n * Opera), Edge on the desktop, and iOS and Chrome on mobile.\r\n *\r\n * Learn more in https://angular.io/guide/browser-support\r\n */\r\n\r\n/***************************************************************************************************\r\n * BROWSER POLYFILLS\r\n */\r\n\r\n/**\r\n * By default, zone.js will patch all possible macroTask and DomEvents\r\n * user can disable parts of macroTask/DomEvents patch by setting following flags\r\n * because those flags need to be set before `zone.js` being loaded, and webpack\r\n * will put import in the top of bundle, so user need to create a separate file\r\n * in this directory (for example: zone-flags.ts), and put the following flags\r\n * into that file, and then add the following code before importing zone.js.\r\n * import './zone-flags';\r\n *\r\n * The flags allowed in zone-flags.ts are listed here.\r\n *\r\n * The following flags will work for all browsers.\r\n *\r\n * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame\r\n * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick\r\n * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames\r\n *\r\n *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js\r\n *  with the following flag, it will bypass `zone.js` patch for IE/Edge\r\n *\r\n *  (window as any).__Zone_enable_cross_context_check = true;\r\n *\r\n */\r\n\r\n/***************************************************************************************************\r\n * Zone JS is required by default for Angular itself.\r\n */\r\nimport 'zone.js';  // Included with Angular CLI.\r\n\r\n\r\n/***************************************************************************************************\r\n * APPLICATION IMPORTS\r\n */\r\n"
@@ -20,10 +20,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f7273419a173a64071c648bd001c92d84dbbaf7c"
+    "hash": "1f0243339e52f92693f2a01793446b2602599139"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\session.service.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\session.service.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\session.service.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\session.service.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -385,35 +385,35 @@
       }
     },
     "s": {
-      "0": 24,
-      "1": 24,
-      "2": 24,
-      "3": 1057,
-      "4": 18,
-      "5": 18,
-      "6": 18,
+      "0": 14,
+      "1": 14,
+      "2": 14,
+      "3": 608,
+      "4": 11,
+      "5": 11,
+      "6": 11,
       "7": 0,
       "8": 0,
       "9": 0,
-      "10": 18,
-      "11": 24,
-      "12": 24,
-      "13": 24,
-      "14": 24
+      "10": 11,
+      "11": 14,
+      "12": 14,
+      "13": 14,
+      "14": 14
     },
     "f": {
-      "0": 24,
-      "1": 24,
-      "2": 1057,
-      "3": 18,
+      "0": 14,
+      "1": 14,
+      "2": 608,
+      "3": 11,
       "4": 0,
-      "5": 18,
-      "6": 24
+      "5": 11,
+      "6": 14
     },
     "b": {
       "0": [
-        24,
-        24
+        14,
+        14
       ]
     },
     "inputSourceMap": {
@@ -437,7 +437,7 @@
         "providedIn"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\session.service.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\session.service.ts"
       ],
       "sourcesContent": [
         "import { Injectable } from '@angular/core';\r\nimport { BehaviorSubject, Observable } from 'rxjs';\r\nimport { SessionInformation } from '../models/sessionInformation.interface';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class SessionService {\r\n\r\n  public isLogged = false;\r\n  public sessionInformation: SessionInformation | undefined;\r\n\r\n  private isLoggedSubject = new BehaviorSubject<boolean>(this.isLogged);\r\n\r\n  public $isLogged(): Observable<boolean> {\r\n    return this.isLoggedSubject.asObservable();\r\n  }\r\n\r\n  public logIn(user: SessionInformation): void {\r\n    this.sessionInformation = user;\r\n    this.isLogged = true;\r\n    this.next();\r\n  }\r\n\r\n  public logOut(): void {\r\n    this.sessionInformation = undefined;\r\n    this.isLogged = false;\r\n    this.next();\r\n  }\r\n\r\n  private next(): void {\r\n    this.isLoggedSubject.next(this.isLogged);\r\n  }\r\n}\r\n"
@@ -446,10 +446,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "1f20fec4718931c034bb80a5c134cfdf462ba7dc"
+    "hash": "c5ddc0fd1ec61b85064b8f252add4412ca30b493"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\guards\\unauth.guard.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\guards\\unauth.guard.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\guards\\unauth.guard.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\guards\\unauth.guard.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -735,32 +735,32 @@
       }
     },
     "s": {
-      "0": 24,
-      "1": 24,
-      "2": 24,
-      "3": 26,
+      "0": 14,
+      "1": 14,
+      "2": 14,
+      "3": 15,
       "4": 0,
       "5": 0,
-      "6": 26,
-      "7": 24,
-      "8": 24,
-      "9": 24,
-      "10": 24
+      "6": 15,
+      "7": 14,
+      "8": 14,
+      "9": 14,
+      "10": 14
     },
     "f": {
-      "0": 24,
-      "1": 24,
-      "2": 26,
-      "3": 24
+      "0": 14,
+      "1": 14,
+      "2": 15,
+      "3": 14
     },
     "b": {
       "0": [
         0,
-        26
+        15
       ],
       "1": [
-        24,
-        24
+        14,
+        14
       ]
     },
     "inputSourceMap": {
@@ -784,7 +784,7 @@
         "providedIn"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\guards\\unauth.guard.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\guards\\unauth.guard.ts"
       ],
       "sourcesContent": [
         "import {Injectable} from \"@angular/core\";\r\nimport {CanActivate, Router} from \"@angular/router\";\r\nimport { SessionService } from \"../core/service/session.service\";\r\n\r\n@Injectable({providedIn: 'root'})\r\nexport class UnauthGuard implements CanActivate {\r\n\r\n  constructor(\r\n    private router: Router,\r\n    private sessionService: SessionService,\r\n  ) {\r\n  }\r\n\r\n  public canActivate(): boolean {\r\n    if (this.sessionService.isLogged) {\r\n      this.router.navigate(['rentals']);\r\n      return false;\r\n    }\r\n    return true;\r\n  }\r\n}\r\n"
@@ -793,10 +793,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "ff3c66df8134ed957855c39d975e7d68b63ebb47"
+    "hash": "cfe61f2b6d061da2c8035f501b8978de980c27a4"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\guards\\auth.guard.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\guards\\auth.guard.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\guards\\auth.guard.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\guards\\auth.guard.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -1082,32 +1082,32 @@
       }
     },
     "s": {
-      "0": 24,
-      "1": 18,
-      "2": 18,
-      "3": 18,
+      "0": 14,
+      "1": 11,
+      "2": 11,
+      "3": 11,
       "4": 0,
       "5": 0,
-      "6": 18,
-      "7": 24,
-      "8": 18,
-      "9": 24,
-      "10": 24
+      "6": 11,
+      "7": 14,
+      "8": 11,
+      "9": 14,
+      "10": 14
     },
     "f": {
-      "0": 24,
-      "1": 18,
-      "2": 18,
-      "3": 18
+      "0": 14,
+      "1": 11,
+      "2": 11,
+      "3": 11
     },
     "b": {
       "0": [
         0,
-        18
+        11
       ],
       "1": [
-        18,
-        18
+        11,
+        11
       ]
     },
     "inputSourceMap": {
@@ -1131,7 +1131,7 @@
         "providedIn"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\guards\\auth.guard.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\guards\\auth.guard.ts"
       ],
       "sourcesContent": [
         "import {Injectable} from \"@angular/core\";\r\nimport {CanActivate, Router} from \"@angular/router\";\r\nimport { SessionService } from \"../core/service/session.service\";\r\n\r\n@Injectable({providedIn: 'root'})\r\nexport class AuthGuard implements CanActivate {\r\n\r\n  constructor(\r\n    private router: Router,\r\n    private sessionService: SessionService,\r\n  ) {\r\n  }\r\n\r\n  public canActivate(): boolean {\r\n    if (!this.sessionService.isLogged) {\r\n      this.router.navigate(['login']);\r\n      return false;\r\n    }\r\n    return true;\r\n  }\r\n}\r\n"
@@ -1140,10 +1140,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "523ba17a6ce9d6bda453c4481f318068dbaf1b13"
+    "hash": "846e60b2d65e427f56dbb65a93e8740727daf25c"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\shared\\material.module.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\shared\\material.module.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\shared\\material.module.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\shared\\material.module.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -1305,22 +1305,22 @@
       }
     },
     "s": {
-      "0": 24,
-      "1": 24,
-      "2": 24,
-      "3": 78,
-      "4": 24,
-      "5": 24,
-      "6": 24
+      "0": 14,
+      "1": 14,
+      "2": 14,
+      "3": 47,
+      "4": 14,
+      "5": 14,
+      "6": 14
     },
     "f": {
-      "0": 24,
-      "1": 78
+      "0": 14,
+      "1": 47
     },
     "b": {
       "0": [
-        78,
-        78
+        47,
+        47
       ]
     },
     "inputSourceMap": {
@@ -1358,7 +1358,7 @@
         "MaterialModule"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\shared\\material.module.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\shared\\material.module.ts"
       ],
       "sourcesContent": [
         "import { NgModule } from '@angular/core';\r\nimport { OverlayModule } from '@angular/cdk/overlay';\r\nimport { CdkTreeModule } from '@angular/cdk/tree';\r\nimport { PortalModule } from '@angular/cdk/portal';\r\nimport { MatAutocompleteModule } from '@angular/material/autocomplete';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatButtonToggleModule } from '@angular/material/button-toggle';\r\nimport { MatCardModule } from '@angular/material/card';\r\nimport { MatCheckboxModule } from '@angular/material/checkbox';\r\nimport { MatChipsModule } from '@angular/material/chips';\r\nimport { MatRippleModule } from '@angular/material/core';\r\nimport { MatDividerModule } from '@angular/material/divider';\r\nimport { MatExpansionModule } from '@angular/material/expansion';\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { MatListModule } from '@angular/material/list';\r\nimport { MatMenuModule } from '@angular/material/menu';\r\nimport { MatPaginatorModule } from '@angular/material/paginator';\r\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\r\nimport { MatSelectModule } from '@angular/material/select';\r\nimport { MatSidenavModule } from '@angular/material/sidenav';\r\nimport { MatSnackBarModule } from '@angular/material/snack-bar';\r\nimport { MatSortModule } from '@angular/material/sort';\r\nimport { MatTableModule } from '@angular/material/table';\r\nimport { MatTabsModule } from '@angular/material/tabs';\r\nimport { MatToolbarModule } from '@angular/material/toolbar';\r\nimport { MatTreeModule } from '@angular/material/tree';\r\nimport { ReactiveFormsModule } from '@angular/forms';\r\n\r\n\r\nconst materialModules = [\r\n  ReactiveFormsModule,\r\n  CdkTreeModule,\r\n  MatAutocompleteModule,\r\n  MatButtonModule,\r\n  MatCardModule,\r\n  MatCheckboxModule,\r\n  MatChipsModule,\r\n  MatDividerModule,\r\n  MatExpansionModule,\r\n  MatIconModule,\r\n  MatInputModule,\r\n  MatListModule,\r\n  MatMenuModule,\r\n  MatProgressSpinnerModule,\r\n  MatPaginatorModule,\r\n  MatRippleModule,\r\n  MatSelectModule,\r\n  MatSidenavModule,\r\n  MatSnackBarModule,\r\n  MatSortModule,\r\n  MatTableModule,\r\n  MatTabsModule,\r\n  MatToolbarModule,\r\n  MatFormFieldModule,\r\n  MatButtonToggleModule,\r\n  MatTreeModule,\r\n  OverlayModule,\r\n  PortalModule\r\n];\r\n\r\n@NgModule({\r\n  imports: [\r\n    ...materialModules\r\n  ],\r\n  exports: [\r\n    ...materialModules\r\n  ],\r\n})\r\nexport class MaterialModule { }\r\n"
@@ -1367,10 +1367,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f84eeb1d3b3a7b7ce2e041dc072096197488ebf6"
+    "hash": "6a4be0f7c2563f9884b9547b6b6f80776821a8f2"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\user.service.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\user.service.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\user.service.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\user.service.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -1624,18 +1624,18 @@
       }
     },
     "s": {
-      "0": 24,
+      "0": 14,
       "1": 0,
       "2": 0,
       "3": 0,
       "4": 0,
-      "5": 24,
+      "5": 14,
       "6": 0,
-      "7": 24,
-      "8": 24
+      "7": 14,
+      "8": 14
     },
     "f": {
-      "0": 24,
+      "0": 14,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -1667,7 +1667,7 @@
         "providedIn"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\user.service.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\user.service.ts"
       ],
       "sourcesContent": [
         "import { HttpClient } from '@angular/common/http';\r\nimport { Injectable } from '@angular/core';\r\nimport { Observable } from 'rxjs';\r\nimport { User } from '../models/user.interface';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class UserService {\r\n\r\n  private pathService = 'api/user';\r\n\r\n  constructor(private httpClient: HttpClient) { }\r\n\r\n  public getById(id: string): Observable<User> {\r\n    return this.httpClient.get<User>(`${this.pathService}/${id}`);\r\n  }\r\n\r\n  public delete(id: string): Observable<void> {\r\n    return this.httpClient.delete<void>(`${this.pathService}/${id}`);\r\n  }\r\n}\r\n"
@@ -1676,10 +1676,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "787757a61bcaf29449938c67d9a4f007672006c4"
+    "hash": "f153ad836f3cd6992a9b791c177758fa98d256c2"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\components\\me\\me.component.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\components\\me\\me.component.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\components\\me\\me.component.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\components\\me\\me.component.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -3260,7 +3260,7 @@
       "50": 0,
       "51": 0,
       "52": 0,
-      "53": 24,
+      "53": 14,
       "54": 0,
       "55": 0,
       "56": 0,
@@ -3273,9 +3273,9 @@
       "63": 0,
       "64": 0,
       "65": 0,
-      "66": 24,
+      "66": 14,
       "67": 0,
-      "68": 24,
+      "68": 14,
       "69": 0,
       "70": 0,
       "71": 0,
@@ -3292,14 +3292,14 @@
       "82": 0,
       "83": 0,
       "84": 0,
-      "85": 24
+      "85": 14
     },
     "f": {
       "0": 0,
       "1": 0,
       "2": 0,
       "3": 0,
-      "4": 24,
+      "4": 14,
       "5": 0,
       "6": 0,
       "7": 0,
@@ -3434,21 +3434,21 @@
         "encapsulation"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\components\\me\\me.component.ts",
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\components\\me\\me.component.html"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\components\\me\\me.component.ts",
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\components\\me\\me.component.html"
       ],
       "sourcesContent": [
-        "import { CommonModule } from '@angular/common';\nimport { Component, DestroyRef, OnInit, inject } from '@angular/core';\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\nimport { MatSnackBar } from '@angular/material/snack-bar';\nimport { Router } from '@angular/router';\nimport { MaterialModule } from '../../shared/material.module';\nimport { User } from '../../core/models/user.interface';\nimport { SessionService } from '../../core/service/session.service';\nimport { UserService } from '../../core/service/user.service';\n\n@Component({\n  selector: 'app-me',\n  imports: [CommonModule, MaterialModule],\n  templateUrl: './me.component.html',\n  styleUrls: ['./me.component.scss']\n})\nexport class MeComponent implements OnInit {\n  private router = inject(Router);\n  private sessionService = inject(SessionService);\n  private matSnackBar = inject(MatSnackBar);\n  private userService = inject(UserService);\n  private destroyRef = inject(DestroyRef);\n\n  public user: User | undefined;\n\n  ngOnInit(): void {\n    this.userService\n      .getById(this.sessionService.sessionInformation!.id.toString())\n      .pipe(takeUntilDestroyed(this.destroyRef))\n      .subscribe((user: User) => (this.user = user));\n  }\n\n  public back(): void {\n    window.history.back();\n  }\n\n  public delete(): void {\n    this.userService\n      .delete(this.sessionService.sessionInformation!.id.toString())\n      .pipe(takeUntilDestroyed(this.destroyRef))\n      .subscribe(() => {\n        this.matSnackBar.open('Your account has been deleted !', 'Close', { duration: 3000 });\n        this.sessionService.logOut();\n        this.router.navigate(['/']);\n      });\n  }\n}\n",
+        "import { CommonModule } from '@angular/common';\r\nimport { Component, DestroyRef, OnInit, inject } from '@angular/core';\r\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\r\nimport { MatSnackBar } from '@angular/material/snack-bar';\r\nimport { Router } from '@angular/router';\r\nimport { MaterialModule } from '../../shared/material.module';\r\nimport { User } from '../../core/models/user.interface';\r\nimport { SessionService } from '../../core/service/session.service';\r\nimport { UserService } from '../../core/service/user.service';\r\n\r\n@Component({\r\n  selector: 'app-me',\r\n  imports: [CommonModule, MaterialModule],\r\n  templateUrl: './me.component.html',\r\n  styleUrls: ['./me.component.scss']\r\n})\r\nexport class MeComponent implements OnInit {\r\n  private router = inject(Router);\r\n  private sessionService = inject(SessionService);\r\n  private matSnackBar = inject(MatSnackBar);\r\n  private userService = inject(UserService);\r\n  private destroyRef = inject(DestroyRef);\r\n\r\n  public user: User | undefined;\r\n\r\n  ngOnInit(): void {\r\n    this.userService\r\n      .getById(this.sessionService.sessionInformation!.id.toString())\r\n      .pipe(takeUntilDestroyed(this.destroyRef))\r\n      .subscribe((user: User) => (this.user = user));\r\n  }\r\n\r\n  public back(): void {\r\n    window.history.back();\r\n  }\r\n\r\n  public delete(): void {\r\n    this.userService\r\n      .delete(this.sessionService.sessionInformation!.id.toString())\r\n      .pipe(takeUntilDestroyed(this.destroyRef))\r\n      .subscribe(() => {\r\n        this.matSnackBar.open('Your account has been deleted !', 'Close', { duration: 3000 });\r\n        this.sessionService.logOut();\r\n        this.router.navigate(['/']);\r\n      });\r\n  }\r\n}\r\n",
         "<div class=\"m3\">\r\n  <mat-card>\r\n    <mat-card-title>\r\n      <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <button mat-icon-button (click)=\"back()\">\r\n          <mat-icon>arrow_back</mat-icon>\r\n        </button>\r\n        <h1>User information</h1>\r\n      </div>\r\n    </mat-card-title>\r\n\r\n    <mat-card-content>\r\n      @if (user) {\r\n        <div fxLayout=\"column\" fxLayoutAlign=\"start center\">\r\n          <p>Name: {{ user.firstName }} {{ user.lastName | uppercase }}</p>\r\n          <p>Email: {{ user.email }}</p>\r\n\r\n          @if (user.admin) {\r\n            <p class=\"my2\">You are admin</p>\r\n          } @else {\r\n            <div fxLayout=\"column\" class=\"my2\" fxLayoutAlign=\"center center\">\r\n              <p>Delete my account:</p>\r\n              <button mat-raised-button color=\"warn\" (click)=\"delete()\">\r\n                <mat-icon>delete</mat-icon>\r\n                <span class=\"ml1\">Detail</span>\r\n              </button>\r\n            </div>\r\n          }\r\n\r\n          <div fxLayoutAlign=\"space-between center\" class=\"p2 w100\">\r\n            <p><i>Create at: </i> {{ user.createdAt | date: 'longDate'}}</p>\r\n            <p><i>Last update: </i> {{ user.updatedAt| date: 'longDate'}}</p>\r\n          </div>\r\n        </div>\r\n      }\r\n    </mat-card-content>\r\n  </mat-card>\r\n</div>\r\n"
       ],
       "mappings": "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",
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "2db896727e2d5bc195be5dfa41b6ebd6eaf9b18f"
+    "hash": "eeaf05417e4a944727cb356ba77cb540ec6b8358"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\not-found\\not-found.component.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\not-found\\not-found.component.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\not-found\\not-found.component.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\not-found\\not-found.component.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -3690,18 +3690,18 @@
       }
     },
     "s": {
-      "0": 24,
-      "1": 24,
+      "0": 14,
+      "1": 14,
       "2": 0,
-      "3": 24,
+      "3": 14,
       "4": 0,
       "5": 0,
       "6": 0,
       "7": 0,
-      "8": 24
+      "8": 14
     },
     "f": {
-      "0": 24,
+      "0": 14,
       "1": 0,
       "2": 0
     },
@@ -3733,8 +3733,8 @@
         "ɵɵelementEnd"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\not-found\\not-found.component.ts",
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\not-found\\not-found.component.html"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\not-found\\not-found.component.ts",
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\not-found\\not-found.component.html"
       ],
       "sourcesContent": [
         "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-not-found',\r\n  templateUrl: './not-found.component.html',\r\n  styleUrls: ['./not-found.component.scss']\r\n})\r\nexport class NotFoundComponent {\r\n}\r\n",
@@ -3744,10 +3744,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "441dfeb2c4e9c690131f732c574fdae58342cd29"
+    "hash": "9ffd61428542950e09c415fc8f296f937739b7cd"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\auth.service.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\auth.service.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\auth.service.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\auth.service.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -4001,27 +4001,27 @@
       }
     },
     "s": {
-      "0": 24,
-      "1": 24,
-      "2": 24,
-      "3": 4,
-      "4": 20,
-      "5": 24,
-      "6": 24,
-      "7": 24,
-      "8": 24
+      "0": 14,
+      "1": 14,
+      "2": 14,
+      "3": 2,
+      "4": 12,
+      "5": 14,
+      "6": 14,
+      "7": 14,
+      "8": 14
     },
     "f": {
-      "0": 24,
-      "1": 24,
-      "2": 4,
-      "3": 20,
-      "4": 24
+      "0": 14,
+      "1": 14,
+      "2": 2,
+      "3": 12,
+      "4": 14
     },
     "b": {
       "0": [
-        24,
-        24
+        14,
+        14
       ]
     },
     "inputSourceMap": {
@@ -4045,7 +4045,7 @@
         "providedIn"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\auth.service.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\auth.service.ts"
       ],
       "sourcesContent": [
         "import { HttpClient } from '@angular/common/http';\r\nimport { Injectable } from '@angular/core';\r\nimport { Observable } from 'rxjs';\r\nimport { LoginRequest } from '../models/loginRequest.interface';\r\nimport { RegisterRequest } from '../models/registerRequest.interface';\r\nimport { SessionInformation } from 'src/app/core/models/sessionInformation.interface';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class AuthService {\r\n\r\n  private pathService = '/api/auth';\r\n\r\n  constructor(private httpClient: HttpClient) { }\r\n\r\n  public register(registerRequest: RegisterRequest): Observable<void> {\r\n    return this.httpClient.post<void>(`${this.pathService}/register`, registerRequest);\r\n  }\r\n\r\n  public login(loginRequest: LoginRequest): Observable<SessionInformation> {\r\n    return this.httpClient.post<SessionInformation>(`${this.pathService}/login`, loginRequest);\r\n  }\r\n}\r\n"
@@ -4054,10 +4054,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "be64bcc9bb6147d1e3686db3e79b65befd541812"
+    "hash": "ce5c5cfcaaf7d1f2ada575bb93f832423eb2060d"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\login\\login.component.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\login\\login.component.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\login\\login.component.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\login\\login.component.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -5137,105 +5137,105 @@
       }
     },
     "s": {
-      "0": 4,
-      "1": 2,
-      "2": 2,
-      "3": 2,
-      "4": 24,
-      "5": 22,
-      "6": 22,
-      "7": 22,
-      "8": 22,
-      "9": 22,
-      "10": 22,
-      "11": 22,
-      "12": 22,
-      "13": 20,
-      "14": 20,
-      "15": 18,
-      "16": 18,
-      "17": 2,
-      "18": 24,
-      "19": 22,
-      "20": 24,
-      "21": 598,
-      "22": 22,
-      "23": 22,
-      "24": 22,
-      "25": 22,
-      "26": 22,
-      "27": 20,
-      "28": 22,
-      "29": 22,
-      "30": 22,
-      "31": 22,
-      "32": 22,
-      "33": 22,
-      "34": 22,
-      "35": 4,
-      "36": 22,
-      "37": 22,
-      "38": 22,
-      "39": 22,
-      "40": 22,
-      "41": 22,
-      "42": 22,
-      "43": 22,
-      "44": 598,
-      "45": 576,
-      "46": 576,
-      "47": 576,
-      "48": 576,
-      "49": 576,
-      "50": 576,
-      "51": 576,
-      "52": 576,
-      "53": 576,
-      "54": 576,
-      "55": 576,
-      "56": 576,
-      "57": 24
+      "0": 2,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 14,
+      "5": 13,
+      "6": 13,
+      "7": 13,
+      "8": 13,
+      "9": 13,
+      "10": 13,
+      "11": 13,
+      "12": 13,
+      "13": 12,
+      "14": 12,
+      "15": 11,
+      "16": 11,
+      "17": 1,
+      "18": 14,
+      "19": 13,
+      "20": 14,
+      "21": 357,
+      "22": 13,
+      "23": 13,
+      "24": 13,
+      "25": 13,
+      "26": 13,
+      "27": 12,
+      "28": 13,
+      "29": 13,
+      "30": 13,
+      "31": 13,
+      "32": 13,
+      "33": 13,
+      "34": 13,
+      "35": 2,
+      "36": 13,
+      "37": 13,
+      "38": 13,
+      "39": 13,
+      "40": 13,
+      "41": 13,
+      "42": 13,
+      "43": 13,
+      "44": 357,
+      "45": 344,
+      "46": 344,
+      "47": 344,
+      "48": 344,
+      "49": 344,
+      "50": 344,
+      "51": 344,
+      "52": 344,
+      "53": 344,
+      "54": 344,
+      "55": 344,
+      "56": 344,
+      "57": 14
     },
     "f": {
-      "0": 4,
-      "1": 24,
-      "2": 22,
-      "3": 20,
-      "4": 18,
-      "5": 2,
-      "6": 22,
-      "7": 598,
-      "8": 20,
-      "9": 4
+      "0": 2,
+      "1": 14,
+      "2": 13,
+      "3": 12,
+      "4": 11,
+      "5": 1,
+      "6": 13,
+      "7": 357,
+      "8": 12,
+      "9": 2
     },
     "b": {
       "0": [
-        2,
-        2
+        1,
+        1
       ],
       "1": [
-        22,
-        22
+        13,
+        13
       ],
       "2": [
-        22,
-        576
+        13,
+        344
       ],
       "3": [
-        576,
-        22
+        344,
+        13
       ],
       "4": [
-        574,
-        2
+        343,
+        1
       ],
       "5": [
-        574,
-        2
+        343,
+        1
       ],
       "6": [
-        2,
-        574
+        1,
+        343
       ]
     },
     "inputSourceMap": {
@@ -5324,21 +5324,21 @@
         "styles"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\login\\login.component.ts",
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\login\\login.component.html"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\login\\login.component.ts",
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\login\\login.component.html"
       ],
       "sourcesContent": [
-        "import { CommonModule } from '@angular/common';\nimport { Component, DestroyRef, inject } from '@angular/core';\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\nimport { FormBuilder, Validators } from '@angular/forms';\nimport { Router } from '@angular/router';\nimport { SessionInformation } from 'src/app/core/models/sessionInformation.interface';\nimport { SessionService } from 'src/app/core/service/session.service';\nimport { LoginRequest } from '../../core/models/loginRequest.interface';\nimport { AuthService } from '../../core/service/auth.service';\nimport { MaterialModule } from '../../shared/material.module';\n\n@Component({\n  selector: 'app-login',\n  imports: [CommonModule, MaterialModule],\n  templateUrl: './login.component.html',\n  styleUrls: ['./login.component.scss']\n})\nexport class LoginComponent {\n  private authService = inject(AuthService);\n  private fb = inject(FormBuilder);\n  private router = inject(Router);\n  private sessionService = inject(SessionService);\n  private destroyRef = inject(DestroyRef);\n\n  public hide = true;\n  public onError = false;\n\n  public form = this.fb.group({\n    email: ['', [Validators.required, Validators.email]],\n    password: ['', [Validators.required, Validators.min(3)]]\n  });\n\n  public submit(): void {\n    const loginRequest = this.form.value as LoginRequest;\n\n    this.authService\n      .login(loginRequest)\n      .pipe(takeUntilDestroyed(this.destroyRef))\n      .subscribe({\n        next: (response: SessionInformation) => {\n          this.sessionService.logIn(response);\n          this.router.navigate(['/sessions']);\n        },\n        error: () => (this.onError = true)\n      });\n  }\n}\n",
+        "import { CommonModule } from '@angular/common';\r\nimport { Component, DestroyRef, inject } from '@angular/core';\r\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\r\nimport { FormBuilder, Validators } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\nimport { SessionInformation } from 'src/app/core/models/sessionInformation.interface';\r\nimport { SessionService } from 'src/app/core/service/session.service';\r\nimport { LoginRequest } from '../../core/models/loginRequest.interface';\r\nimport { AuthService } from '../../core/service/auth.service';\r\nimport { MaterialModule } from '../../shared/material.module';\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  imports: [CommonModule, MaterialModule],\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.scss']\r\n})\r\nexport class LoginComponent {\r\n  private authService = inject(AuthService);\r\n  private fb = inject(FormBuilder);\r\n  private router = inject(Router);\r\n  private sessionService = inject(SessionService);\r\n  private destroyRef = inject(DestroyRef);\r\n\r\n  public hide = true;\r\n  public onError = false;\r\n\r\n  public form = this.fb.group({\r\n    email: ['', [Validators.required, Validators.email]],\r\n    password: ['', [Validators.required, Validators.min(3)]]\r\n  });\r\n\r\n  public submit(): void {\r\n    const loginRequest = this.form.value as LoginRequest;\r\n\r\n    this.authService\r\n      .login(loginRequest)\r\n      .pipe(takeUntilDestroyed(this.destroyRef))\r\n      .subscribe({\r\n        next: (response: SessionInformation) => {\r\n          this.sessionService.logIn(response);\r\n          this.router.navigate(['/sessions']);\r\n        },\r\n        error: () => (this.onError = true)\r\n      });\r\n  }\r\n}\r\n",
         "<div class=\"login\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n  <mat-card>\r\n    <mat-card-header fxLayoutAlign=\"center center\">\r\n      <mat-card-title>Login</mat-card-title>\r\n    </mat-card-header>\r\n\r\n    <form class=\"login-form\" [formGroup]=\"form\" (ngSubmit)=\"submit()\">\r\n      <mat-card-content fxLayout=\"column\">\r\n        <mat-form-field fxFlex>\r\n          <input matInput placeholder=\"Email\" formControlName=\"email\">\r\n        </mat-form-field>\r\n\r\n        <mat-form-field fxFlex>\r\n          <input matInput [type]=\"hide ? 'password' : 'text'\" placeholder=\"Password\" formControlName=\"password\">\r\n          <button mat-icon-button matSuffix (click)=\"hide = !hide\" [attr.aria-label]=\"'Hide password'\"\r\n            [attr.aria-pressed]=\"hide\">\r\n            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n          </button>\r\n        </mat-form-field>\r\n      </mat-card-content>\r\n\r\n      <button mat-raised-button color=\"primary\" type=\"submit\" [disabled]=\"form.invalid\">Submit</button>\r\n\r\n      @if (onError) {\r\n        <p class=\"error\">An error occurred</p>\r\n      }\r\n    </form>\r\n  </mat-card>\r\n</div>\r\n"
       ],
       "mappings": "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",
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "8f014fea95984c985dcea958366b7c5379c46c3d"
+    "hash": "ade8d74df752b453024d13aaab2cc50f0d02ad7b"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\register\\register.component.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\register\\register.component.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\register\\register.component.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\register\\register.component.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -6242,88 +6242,88 @@
       }
     },
     "s": {
-      "0": 4,
-      "1": 2,
-      "2": 2,
-      "3": 2,
-      "4": 24,
-      "5": 4,
-      "6": 4,
-      "7": 4,
-      "8": 4,
-      "9": 4,
-      "10": 4,
-      "11": 4,
-      "12": 4,
-      "13": 2,
-      "14": 2,
-      "15": 24,
-      "16": 4,
-      "17": 24,
-      "18": 154,
-      "19": 4,
-      "20": 4,
-      "21": 4,
-      "22": 4,
-      "23": 4,
-      "24": 4,
-      "25": 4,
-      "26": 4,
-      "27": 4,
-      "28": 4,
-      "29": 4,
-      "30": 4,
-      "31": 4,
-      "32": 4,
-      "33": 4,
-      "34": 4,
-      "35": 4,
-      "36": 4,
-      "37": 4,
-      "38": 4,
-      "39": 4,
-      "40": 4,
-      "41": 4,
-      "42": 154,
-      "43": 150,
-      "44": 150,
-      "45": 150,
-      "46": 150,
-      "47": 150,
-      "48": 150,
-      "49": 24
+      "0": 2,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 14,
+      "5": 2,
+      "6": 2,
+      "7": 2,
+      "8": 2,
+      "9": 2,
+      "10": 2,
+      "11": 2,
+      "12": 2,
+      "13": 1,
+      "14": 1,
+      "15": 14,
+      "16": 2,
+      "17": 14,
+      "18": 77,
+      "19": 2,
+      "20": 2,
+      "21": 2,
+      "22": 2,
+      "23": 2,
+      "24": 2,
+      "25": 2,
+      "26": 2,
+      "27": 2,
+      "28": 2,
+      "29": 2,
+      "30": 2,
+      "31": 2,
+      "32": 2,
+      "33": 2,
+      "34": 2,
+      "35": 2,
+      "36": 2,
+      "37": 2,
+      "38": 2,
+      "39": 2,
+      "40": 2,
+      "41": 2,
+      "42": 77,
+      "43": 75,
+      "44": 75,
+      "45": 75,
+      "46": 75,
+      "47": 75,
+      "48": 75,
+      "49": 14
     },
     "f": {
-      "0": 4,
-      "1": 24,
-      "2": 4,
-      "3": 4,
-      "4": 2,
-      "5": 2,
-      "6": 4,
-      "7": 154,
-      "8": 4
+      "0": 2,
+      "1": 14,
+      "2": 2,
+      "3": 2,
+      "4": 1,
+      "5": 1,
+      "6": 2,
+      "7": 77,
+      "8": 2
     },
     "b": {
       "0": [
+        1,
+        1
+      ],
+      "1": [
         2,
         2
       ],
-      "1": [
-        4,
-        4
-      ],
       "2": [
-        4,
-        150
+        2,
+        75
       ],
       "3": [
-        150,
-        4
+        75,
+        2
       ],
       "4": [
-        2,
-        148
+        1,
+        74
       ]
     },
     "inputSourceMap": {
@@ -6404,21 +6404,21 @@
         "styles"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\register\\register.component.ts",
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\register\\register.component.html"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\register\\register.component.ts",
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\register\\register.component.html"
       ],
       "sourcesContent": [
-        "import { CommonModule } from '@angular/common';\nimport { Component, DestroyRef, inject } from '@angular/core';\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\nimport { FormBuilder, Validators } from '@angular/forms';\nimport { Router } from '@angular/router';\nimport { RegisterRequest } from '../../core/models/registerRequest.interface';\nimport { AuthService } from '../../core/service/auth.service';\nimport { MaterialModule } from '../../shared/material.module';\n\n@Component({\n  selector: 'app-register',\n  imports: [CommonModule, MaterialModule],\n  templateUrl: './register.component.html',\n  styleUrls: ['./register.component.scss']\n})\nexport class RegisterComponent {\n  private authService = inject(AuthService);\n  private fb = inject(FormBuilder);\n  private router = inject(Router);\n  private destroyRef = inject(DestroyRef);\n\n  public onError = false;\n\n  public form = this.fb.group({\n    email: ['', [Validators.required, Validators.email]],\n    firstName: ['', [Validators.required, Validators.min(3), Validators.max(20)]],\n    lastName: ['', [Validators.required, Validators.min(3), Validators.max(20)]],\n    password: ['', [Validators.required, Validators.min(3), Validators.max(40)]]\n  });\n\n  public submit(): void {\n    const registerRequest = this.form.value as RegisterRequest;\n\n    this.authService\n      .register(registerRequest)\n      .pipe(takeUntilDestroyed(this.destroyRef))\n      .subscribe({\n        next: () => this.router.navigate(['/login']),\n        error: () => (this.onError = true)\n      });\n  }\n}\n",
+        "import { CommonModule } from '@angular/common';\r\nimport { Component, DestroyRef, inject } from '@angular/core';\r\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\r\nimport { FormBuilder, Validators } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\nimport { RegisterRequest } from '../../core/models/registerRequest.interface';\r\nimport { AuthService } from '../../core/service/auth.service';\r\nimport { MaterialModule } from '../../shared/material.module';\r\n\r\n@Component({\r\n  selector: 'app-register',\r\n  imports: [CommonModule, MaterialModule],\r\n  templateUrl: './register.component.html',\r\n  styleUrls: ['./register.component.scss']\r\n})\r\nexport class RegisterComponent {\r\n  private authService = inject(AuthService);\r\n  private fb = inject(FormBuilder);\r\n  private router = inject(Router);\r\n  private destroyRef = inject(DestroyRef);\r\n\r\n  public onError = false;\r\n\r\n  public form = this.fb.group({\r\n    email: ['', [Validators.required, Validators.email]],\r\n    firstName: ['', [Validators.required, Validators.min(3), Validators.max(20)]],\r\n    lastName: ['', [Validators.required, Validators.min(3), Validators.max(20)]],\r\n    password: ['', [Validators.required, Validators.min(3), Validators.max(40)]]\r\n  });\r\n\r\n  public submit(): void {\r\n    const registerRequest = this.form.value as RegisterRequest;\r\n\r\n    this.authService\r\n      .register(registerRequest)\r\n      .pipe(takeUntilDestroyed(this.destroyRef))\r\n      .subscribe({\r\n        next: () => this.router.navigate(['/login']),\r\n        error: () => (this.onError = true)\r\n      });\r\n  }\r\n}\r\n",
         "<div class=\"register\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n  <mat-card>\r\n    <mat-card-header fxLayoutAlign=\"center center\">\r\n      <mat-card-title>Register</mat-card-title>\r\n    </mat-card-header>\r\n\r\n    <form class=\"register-form\" [formGroup]=\"form\" (ngSubmit)=\"submit()\">\r\n      <mat-card-content fxLayout=\"column\">\r\n        <mat-form-field fxFlex>\r\n          <input matInput placeholder=\"First name\" formControlName=\"firstName\">\r\n        </mat-form-field>\r\n\r\n        <mat-form-field fxFlex>\r\n          <input matInput placeholder=\"Last name\" formControlName=\"lastName\">\r\n        </mat-form-field>\r\n\r\n        <mat-form-field fxFlex>\r\n          <input matInput placeholder=\"Email\" formControlName=\"email\">\r\n        </mat-form-field>\r\n\r\n        <mat-form-field fxFlex>\r\n          <input matInput placeholder=\"Password\" formControlName=\"password\">\r\n        </mat-form-field>\r\n      </mat-card-content>\r\n\r\n      <button mat-raised-button color=\"primary\" type=\"submit\" [disabled]=\"form.invalid\">Submit</button>\r\n\r\n      @if (onError) {\r\n        <span class=\"error ml2\">An error occurred</span>\r\n      }\r\n    </form>\r\n  </mat-card>\r\n</div>\r\n"
       ],
       "mappings": "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",
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f1179ba6946087fba59f5903691cb178eb2e6dd0"
+    "hash": "94584471eea7f876c88063a62d62351ccdbba27d"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\session-api.service.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\session-api.service.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\session-api.service.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\session-api.service.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -6842,37 +6842,37 @@
       }
     },
     "s": {
-      "0": 24,
-      "1": 18,
-      "2": 18,
-      "3": 24,
-      "4": 10,
+      "0": 14,
+      "1": 11,
+      "2": 11,
+      "3": 15,
+      "4": 9,
       "5": 2,
-      "6": 2,
-      "7": 2,
+      "6": 1,
+      "7": 1,
       "8": 2,
       "9": 2,
-      "10": 24,
-      "11": 18,
-      "12": 24,
-      "13": 24
+      "10": 14,
+      "11": 11,
+      "12": 14,
+      "13": 14
     },
     "f": {
-      "0": 24,
-      "1": 18,
-      "2": 24,
-      "3": 10,
+      "0": 14,
+      "1": 11,
+      "2": 15,
+      "3": 9,
       "4": 2,
-      "5": 2,
-      "6": 2,
+      "5": 1,
+      "6": 1,
       "7": 2,
       "8": 2,
-      "9": 18
+      "9": 11
     },
     "b": {
       "0": [
-        18,
-        18
+        11,
+        11
       ]
     },
     "inputSourceMap": {
@@ -6904,7 +6904,7 @@
         "providedIn"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\session-api.service.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\session-api.service.ts"
       ],
       "sourcesContent": [
         "import { HttpClient } from '@angular/common/http';\r\nimport { Injectable } from '@angular/core';\r\nimport { Observable } from 'rxjs';\r\nimport { Session } from '../models/session.interface';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class SessionApiService {\r\n\r\n  private pathService = 'api/session';\r\n\r\n  constructor(private httpClient: HttpClient) {\r\n  }\r\n\r\n  public all(): Observable<Session[]> {\r\n    return this.httpClient.get<Session[]>(this.pathService);\r\n  }\r\n\r\n  public detail(id: string): Observable<Session> {\r\n    return this.httpClient.get<Session>(`${this.pathService}/${id}`);\r\n  }\r\n\r\n  public delete(id: string): Observable<void> {\r\n    return this.httpClient.delete<void>(`${this.pathService}/${id}`);\r\n  }\r\n\r\n  public create(session: Session): Observable<Session> {\r\n    return this.httpClient.post<Session>(this.pathService, session);\r\n  }\r\n\r\n  public update(id: string, session: Session): Observable<Session> {\r\n    return this.httpClient.put<Session>(`${this.pathService}/${id}`, session);\r\n  }\r\n\r\n  public participate(id: string, userId: string): Observable<void> {\r\n    return this.httpClient.post<void>(`${this.pathService}/${id}/participate/${userId}`, null);\r\n  }\r\n\r\n  public unParticipate(id: string, userId: string): Observable<void> {\r\n    return this.httpClient.delete<void>(`${this.pathService}/${id}/participate/${userId}`);\r\n  }\r\n\r\n}\r\n"
@@ -6913,10 +6913,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "bb92fe29847016611b7356a1a10bc87dfe8606de"
+    "hash": "16d3bc653e130ec8c52a9485a3d93362177a9d8f"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\sessions\\components\\list\\list.component.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\sessions\\components\\list\\list.component.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\sessions\\components\\list\\list.component.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\sessions\\components\\list\\list.component.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -8368,142 +8368,142 @@
       }
     },
     "s": {
-      "0": 24,
-      "1": 8,
-      "2": 24,
-      "3": 4,
-      "4": 24,
-      "5": 8,
-      "6": 61,
-      "7": 20,
-      "8": 20,
-      "9": 20,
-      "10": 20,
-      "11": 20,
-      "12": 20,
-      "13": 8,
-      "14": 4,
-      "15": 4,
-      "16": 4,
-      "17": 4,
-      "18": 4,
-      "19": 4,
-      "20": 8,
-      "21": 4,
-      "22": 4,
-      "23": 16,
-      "24": 8,
-      "25": 8,
-      "26": 8,
-      "27": 8,
-      "28": 8,
-      "29": 8,
-      "30": 8,
-      "31": 8,
-      "32": 8,
-      "33": 8,
-      "34": 8,
-      "35": 8,
-      "36": 8,
-      "37": 8,
-      "38": 8,
-      "39": 8,
-      "40": 8,
-      "41": 8,
-      "42": 8,
-      "43": 8,
-      "44": 8,
-      "45": 16,
-      "46": 8,
-      "47": 8,
-      "48": 8,
-      "49": 8,
-      "50": 8,
-      "51": 8,
-      "52": 8,
-      "53": 8,
-      "54": 8,
-      "55": 8,
-      "56": 8,
-      "57": 8,
-      "58": 24,
-      "59": 24,
-      "60": 24,
-      "61": 24,
-      "62": 57,
-      "63": 24,
-      "64": 24,
-      "65": 24,
-      "66": 73,
-      "67": 24,
-      "68": 24,
-      "69": 24,
-      "70": 24,
-      "71": 24,
-      "72": 24,
-      "73": 24,
-      "74": 24,
-      "75": 24,
-      "76": 73,
-      "77": 49,
-      "78": 49,
-      "79": 49,
-      "80": 49,
-      "81": 24
+      "0": 14,
+      "1": 4,
+      "2": 14,
+      "3": 2,
+      "4": 14,
+      "5": 4,
+      "6": 37,
+      "7": 12,
+      "8": 12,
+      "9": 12,
+      "10": 12,
+      "11": 12,
+      "12": 12,
+      "13": 4,
+      "14": 2,
+      "15": 2,
+      "16": 2,
+      "17": 2,
+      "18": 2,
+      "19": 2,
+      "20": 4,
+      "21": 2,
+      "22": 2,
+      "23": 8,
+      "24": 4,
+      "25": 4,
+      "26": 4,
+      "27": 4,
+      "28": 4,
+      "29": 4,
+      "30": 4,
+      "31": 4,
+      "32": 4,
+      "33": 4,
+      "34": 4,
+      "35": 4,
+      "36": 4,
+      "37": 4,
+      "38": 4,
+      "39": 4,
+      "40": 4,
+      "41": 4,
+      "42": 4,
+      "43": 4,
+      "44": 4,
+      "45": 8,
+      "46": 4,
+      "47": 4,
+      "48": 4,
+      "49": 4,
+      "50": 4,
+      "51": 4,
+      "52": 4,
+      "53": 4,
+      "54": 4,
+      "55": 4,
+      "56": 4,
+      "57": 4,
+      "58": 14,
+      "59": 15,
+      "60": 15,
+      "61": 15,
+      "62": 35,
+      "63": 14,
+      "64": 15,
+      "65": 14,
+      "66": 46,
+      "67": 15,
+      "68": 15,
+      "69": 15,
+      "70": 15,
+      "71": 15,
+      "72": 15,
+      "73": 15,
+      "74": 15,
+      "75": 15,
+      "76": 46,
+      "77": 31,
+      "78": 31,
+      "79": 31,
+      "80": 31,
+      "81": 14
     },
     "f": {
-      "0": 8,
-      "1": 4,
-      "2": 8,
-      "3": 61,
-      "4": 8,
-      "5": 16,
-      "6": 24,
-      "7": 24,
-      "8": 57,
-      "9": 24,
-      "10": 73
+      "0": 4,
+      "1": 2,
+      "2": 4,
+      "3": 37,
+      "4": 4,
+      "5": 8,
+      "6": 14,
+      "7": 15,
+      "8": 35,
+      "9": 15,
+      "10": 46
     },
     "b": {
       "0": [
-        20,
-        41
+        12,
+        25
       ],
       "1": [
-        4,
-        4
+        2,
+        2
       ],
       "2": [
-        4,
-        4
+        2,
+        2
       ],
       "3": [
-        8,
-        8
-      ],
-      "4": [
-        8,
-        8
-      ],
-      "5": [
         4,
         4
       ],
+      "4": [
+        4,
+        4
+      ],
+      "5": [
+        2,
+        2
+      ],
       "6": [
-        24,
-        24
+        15,
+        15
       ],
       "7": [
-        24,
-        49
+        15,
+        31
       ],
       "8": [
-        49,
-        24
+        31,
+        15
       ],
       "9": [
-        41,
-        8
+        25,
+        6
       ]
     },
     "inputSourceMap": {
@@ -8580,8 +8580,8 @@
         "styles"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\sessions\\components\\list\\list.component.ts",
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\sessions\\components\\list\\list.component.html"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\sessions\\components\\list\\list.component.ts",
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\sessions\\components\\list\\list.component.html"
       ],
       "sourcesContent": [
         "import { Component, inject } from '@angular/core';\r\nimport { Observable } from 'rxjs';\r\nimport { SessionInformation } from '../../../../core/models/sessionInformation.interface';\r\nimport { SessionService } from '../../../../core/service/session.service';\r\nimport { Session } from '../../../../core/models/session.interface';\r\nimport { SessionApiService } from '../../../../core/service/session-api.service';\r\nimport { MaterialModule } from \"../../../../shared/material.module\";\r\nimport { CommonModule } from \"@angular/common\";\r\nimport { RouterModule } from \"@angular/router\";\r\n\r\n@Component({\r\n  selector: 'app-list',\r\n  imports: [CommonModule, MaterialModule, RouterModule],\r\n  templateUrl: './list.component.html',\r\n  styleUrls: ['./list.component.scss']\r\n})\r\nexport class ListComponent {\r\n  private sessionApiService = inject(SessionApiService);\r\n  private sessionService = inject(SessionService);\r\n\r\n  public sessions$: Observable<Session[]> = this.sessionApiService.all();\r\n\r\n  get user(): SessionInformation | undefined {\r\n    return this.sessionService.sessionInformation;\r\n  }\r\n}\r\n",
@@ -8591,10 +8591,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "69c1c9e243b90b25e31de9176da895e04abe7137"
+    "hash": "6d6ec1cea4d559b210e83cac8796dce71df0016a"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\teacher.service.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\teacher.service.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\teacher.service.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\teacher.service.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -8848,27 +8848,27 @@
       }
     },
     "s": {
-      "0": 24,
-      "1": 10,
-      "2": 10,
-      "3": 6,
+      "0": 14,
+      "1": 7,
+      "2": 7,
+      "3": 3,
       "4": 8,
-      "5": 24,
-      "6": 10,
-      "7": 24,
-      "8": 24
+      "5": 14,
+      "6": 7,
+      "7": 14,
+      "8": 14
     },
     "f": {
-      "0": 24,
-      "1": 10,
-      "2": 6,
+      "0": 14,
+      "1": 7,
+      "2": 3,
       "3": 8,
-      "4": 10
+      "4": 7
     },
     "b": {
       "0": [
-        10,
-        10
+        7,
+        7
       ]
     },
     "inputSourceMap": {
@@ -8891,7 +8891,7 @@
         "providedIn"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\core\\service\\teacher.service.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\core\\service\\teacher.service.ts"
       ],
       "sourcesContent": [
         "import { HttpClient } from '@angular/common/http';\r\nimport { Injectable } from '@angular/core';\r\nimport { Observable } from 'rxjs';\r\nimport { Teacher } from '../models/teacher.interface';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class TeacherService {\r\n\r\n  private pathService = 'api/teacher';\r\n\r\n  constructor(private httpClient: HttpClient) { }\r\n\r\n  public all(): Observable<Teacher[]> {\r\n    return this.httpClient.get<Teacher[]>(this.pathService);\r\n  }\r\n\r\n  public detail(id: string): Observable<Teacher> {\r\n    return this.httpClient.get<Teacher>(`${this.pathService}/${id}`);\r\n  }\r\n}\r\n"
@@ -8900,10 +8900,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "74b418395e6e74efcad61eaea3c171d8ca4d877f"
+    "hash": "2d3bb5e230577ec79b389213b4c9394bc8fa0fe9"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\sessions\\components\\detail\\detail.component.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\sessions\\components\\detail\\detail.component.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\sessions\\components\\detail\\detail.component.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\sessions\\components\\detail\\detail.component.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -12002,7 +12002,7 @@
       "128": 26,
       "129": 26,
       "130": 26,
-      "131": 24,
+      "131": 14,
       "132": 4,
       "133": 4,
       "134": 4,
@@ -12030,9 +12030,9 @@
       "156": 4,
       "157": 8,
       "158": 8,
-      "159": 24,
+      "159": 14,
       "160": 4,
-      "161": 24,
+      "161": 14,
       "162": 34,
       "163": 4,
       "164": 4,
@@ -12040,7 +12040,7 @@
       "166": 34,
       "167": 30,
       "168": 30,
-      "169": 24
+      "169": 14
     },
     "f": {
       "0": 8,
@@ -12053,7 +12053,7 @@
       "7": 26,
       "8": 30,
       "9": 0,
-      "10": 24,
+      "10": 14,
       "11": 4,
       "12": 4,
       "13": 0,
@@ -12263,21 +12263,21 @@
         "styles"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\sessions\\components\\detail\\detail.component.ts",
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\sessions\\components\\detail\\detail.component.html"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\sessions\\components\\detail\\detail.component.ts",
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\sessions\\components\\detail\\detail.component.html"
       ],
       "sourcesContent": [
-        "import { CommonModule } from '@angular/common';\nimport { Component, DestroyRef, OnInit, inject } from '@angular/core';\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\nimport { MatSnackBar } from '@angular/material/snack-bar';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { switchMap, tap } from 'rxjs/operators';\nimport { Session } from '../../../../core/models/session.interface';\nimport { Teacher } from '../../../../core/models/teacher.interface';\nimport { SessionApiService } from '../../../../core/service/session-api.service';\nimport { SessionService } from '../../../../core/service/session.service';\nimport { TeacherService } from '../../../../core/service/teacher.service';\nimport { MaterialModule } from '../../../../shared/material.module';\n\n@Component({\n  selector: 'app-detail',\n  imports: [CommonModule, MaterialModule],\n  templateUrl: './detail.component.html',\n  styleUrls: ['./detail.component.scss']\n})\nexport class DetailComponent implements OnInit {\n  public session: Session | undefined;\n  public teacher: Teacher | undefined;\n  public isParticipate = false;\n  public isAdmin = false;\n  public sessionId: string;\n  public userId: string;\n\n  private route = inject(ActivatedRoute);\n  private sessionService = inject(SessionService);\n  private sessionApiService = inject(SessionApiService);\n  private teacherService = inject(TeacherService);\n  private matSnackBar = inject(MatSnackBar);\n  private router = inject(Router);\n  private destroyRef = inject(DestroyRef);\n\n  constructor() {\n    this.sessionId = this.route.snapshot.paramMap.get('id')!;\n    this.isAdmin = this.sessionService.sessionInformation!.admin;\n    this.userId = this.sessionService.sessionInformation!.id.toString();\n  }\n\n  ngOnInit(): void {\n    this.fetchSession();\n  }\n\n  public back(): void {\n    window.history.back();\n  }\n\n  public delete(): void {\n    this.sessionApiService\n      .delete(this.sessionId)\n      .pipe(takeUntilDestroyed(this.destroyRef))\n      .subscribe(() => {\n        this.matSnackBar.open('Session deleted !', 'Close', { duration: 3000 });\n        this.router.navigate(['sessions']);\n      });\n  }\n\n  public participate(): void {\n    this.sessionApiService\n      .participate(this.sessionId, this.userId)\n      .pipe(takeUntilDestroyed(this.destroyRef))\n      .subscribe(() => this.fetchSession());\n  }\n\n  public unParticipate(): void {\n    this.sessionApiService\n      .unParticipate(this.sessionId, this.userId)\n      .pipe(takeUntilDestroyed(this.destroyRef))\n      .subscribe(() => this.fetchSession());\n  }\n\n  private fetchSession(): void {\n    this.sessionApiService\n      .detail(this.sessionId)\n      .pipe(\n        tap((session: Session) => {\n          this.session = session;\n          this.isParticipate = session.users.some((u) => u === this.sessionService.sessionInformation!.id);\n        }),\n        switchMap((session: Session) => this.teacherService.detail(session.teacher_id.toString())),\n        takeUntilDestroyed(this.destroyRef)\n      )\n      .subscribe((teacher: Teacher) => (this.teacher = teacher));\n  }\n}\n",
+        "import { CommonModule } from '@angular/common';\r\nimport { Component, DestroyRef, OnInit, inject } from '@angular/core';\r\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\r\nimport { MatSnackBar } from '@angular/material/snack-bar';\r\nimport { ActivatedRoute, Router } from '@angular/router';\r\nimport { switchMap, tap } from 'rxjs/operators';\r\nimport { Session } from '../../../../core/models/session.interface';\r\nimport { Teacher } from '../../../../core/models/teacher.interface';\r\nimport { SessionApiService } from '../../../../core/service/session-api.service';\r\nimport { SessionService } from '../../../../core/service/session.service';\r\nimport { TeacherService } from '../../../../core/service/teacher.service';\r\nimport { MaterialModule } from '../../../../shared/material.module';\r\n\r\n@Component({\r\n  selector: 'app-detail',\r\n  imports: [CommonModule, MaterialModule],\r\n  templateUrl: './detail.component.html',\r\n  styleUrls: ['./detail.component.scss']\r\n})\r\nexport class DetailComponent implements OnInit {\r\n  public session: Session | undefined;\r\n  public teacher: Teacher | undefined;\r\n  public isParticipate = false;\r\n  public isAdmin = false;\r\n  public sessionId: string;\r\n  public userId: string;\r\n\r\n  private route = inject(ActivatedRoute);\r\n  private sessionService = inject(SessionService);\r\n  private sessionApiService = inject(SessionApiService);\r\n  private teacherService = inject(TeacherService);\r\n  private matSnackBar = inject(MatSnackBar);\r\n  private router = inject(Router);\r\n  private destroyRef = inject(DestroyRef);\r\n\r\n  constructor() {\r\n    this.sessionId = this.route.snapshot.paramMap.get('id')!;\r\n    this.isAdmin = this.sessionService.sessionInformation!.admin;\r\n    this.userId = this.sessionService.sessionInformation!.id.toString();\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.fetchSession();\r\n  }\r\n\r\n  public back(): void {\r\n    window.history.back();\r\n  }\r\n\r\n  public delete(): void {\r\n    this.sessionApiService\r\n      .delete(this.sessionId)\r\n      .pipe(takeUntilDestroyed(this.destroyRef))\r\n      .subscribe(() => {\r\n        this.matSnackBar.open('Session deleted !', 'Close', { duration: 3000 });\r\n        this.router.navigate(['sessions']);\r\n      });\r\n  }\r\n\r\n  public participate(): void {\r\n    this.sessionApiService\r\n      .participate(this.sessionId, this.userId)\r\n      .pipe(takeUntilDestroyed(this.destroyRef))\r\n      .subscribe(() => this.fetchSession());\r\n  }\r\n\r\n  public unParticipate(): void {\r\n    this.sessionApiService\r\n      .unParticipate(this.sessionId, this.userId)\r\n      .pipe(takeUntilDestroyed(this.destroyRef))\r\n      .subscribe(() => this.fetchSession());\r\n  }\r\n\r\n  private fetchSession(): void {\r\n    this.sessionApiService\r\n      .detail(this.sessionId)\r\n      .pipe(\r\n        tap((session: Session) => {\r\n          this.session = session;\r\n          this.isParticipate = session.users.some((u) => u === this.sessionService.sessionInformation!.id);\r\n        }),\r\n        switchMap((session: Session) => this.teacherService.detail(session.teacher_id.toString())),\r\n        takeUntilDestroyed(this.destroyRef)\r\n      )\r\n      .subscribe((teacher: Teacher) => (this.teacher = teacher));\r\n  }\r\n}\r\n",
         "<div class=\"m3\">\r\n  @if (session) {\r\n    <mat-card>\r\n      <mat-card-title>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n            <button mat-icon-button (click)=\"back()\">\r\n              <mat-icon>arrow_back</mat-icon>\r\n            </button>\r\n            <h1>{{session.name | titlecase}}</h1>\r\n          </div>\r\n\r\n          <div>\r\n            @if (isAdmin) {\r\n              <button mat-raised-button color=\"warn\" (click)=\"delete()\">\r\n                <mat-icon>delete</mat-icon>\r\n                <span class=\"ml1\">Delete</span>\r\n              </button>\r\n            } @else {\r\n              <div>\r\n                @if (!isParticipate) {\r\n                  <button mat-raised-button color=\"primary\" (click)=\"participate()\">\r\n                    <mat-icon>person_add</mat-icon>\r\n                    <span class=\"ml1\">Participate</span>\r\n                  </button>\r\n                }\r\n\r\n                @if (isParticipate) {\r\n                  <button mat-raised-button color=\"warn\" (click)=\"unParticipate()\">\r\n                    <mat-icon>person_remove</mat-icon>\r\n                    <span class=\"ml1\">Do not participate</span>\r\n                  </button>\r\n                }\r\n              </div>\r\n            }\r\n          </div>\r\n        </div>\r\n      </mat-card-title>\r\n\r\n      @if (teacher) {\r\n        <mat-card-subtitle>\r\n          <div fxLayoutAlign=\"start center\" class=\"ml3\">\r\n            <mat-icon>people</mat-icon>\r\n            <span class=\"ml1\">{{ teacher.firstName }} {{ teacher.lastName | uppercase }}</span>\r\n          </div>\r\n        </mat-card-subtitle>\r\n      }\r\n\r\n      <div mat-card-image fxLayoutAlign=\"center center\">\r\n        <img class=\"picture\" src=\"../../../../../assets/sessions.png\" alt=\"Yoga session\">\r\n      </div>\r\n\r\n      <mat-card-content>\r\n        <div class=\"my2\" fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n          <div fxLayoutAlign=\"start center\">\r\n            <mat-icon>group</mat-icon>\r\n            <span class=\"ml1\">{{ session.users.length }} attendees</span>\r\n          </div>\r\n          <div fxLayoutAlign=\"start center\">\r\n            <mat-icon>calendar_month</mat-icon>\r\n            <span class=\"ml1\">{{ session.date | date: 'longDate'}}</span>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"description\">\r\n          <p>Description:</p>\r\n          {{ session.description }}\r\n          <br>\r\n        </div>\r\n\r\n        <div class=\"date\" class=\"my2\" fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n          <div class=\"created\"><i>Create at: </i> {{ session.createdAt| date: 'longDate'}}</div>\r\n          <div class=\"updated\"><i>Last update: </i> {{ session.updatedAt| date: 'longDate'}}</div>\r\n        </div>\r\n      </mat-card-content>\r\n    </mat-card>\r\n  }\r\n</div>\r\n"
       ],
       "mappings": "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",
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7a6234e3fdf3a7556e3eb38c276ad286f9323bf3"
+    "hash": "90e6ea586708e47e425aa4cdf2194af631410465"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\sessions\\components\\form\\form.component.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\sessions\\components\\form\\form.component.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\sessions\\components\\form\\form.component.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\sessions\\components\\form\\form.component.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -14391,203 +14391,203 @@
       }
     },
     "s": {
-      "0": 24,
-      "1": 12,
-      "2": 124,
-      "3": 4,
-      "4": 4,
-      "5": 4,
-      "6": 110,
-      "7": 2,
-      "8": 2,
-      "9": 2,
-      "10": 440,
-      "11": 12,
-      "12": 12,
-      "13": 12,
-      "14": 440,
-      "15": 428,
-      "16": 428,
-      "17": 428,
-      "18": 428,
-      "19": 232,
-      "20": 6,
-      "21": 6,
-      "22": 6,
-      "23": 4,
-      "24": 4,
-      "25": 4,
-      "26": 6,
-      "27": 6,
-      "28": 6,
-      "29": 6,
-      "30": 6,
-      "31": 6,
-      "32": 6,
-      "33": 6,
-      "34": 6,
-      "35": 6,
-      "36": 6,
-      "37": 6,
-      "38": 6,
-      "39": 6,
-      "40": 6,
-      "41": 6,
-      "42": 6,
-      "43": 6,
-      "44": 6,
-      "45": 6,
-      "46": 6,
-      "47": 6,
-      "48": 6,
-      "49": 6,
-      "50": 6,
-      "51": 232,
-      "52": 226,
-      "53": 226,
-      "54": 226,
-      "55": 226,
-      "56": 226,
-      "57": 226,
-      "58": 226,
-      "59": 24,
-      "60": 6,
-      "61": 6,
-      "62": 6,
-      "63": 6,
-      "64": 6,
-      "65": 6,
-      "66": 6,
-      "67": 6,
-      "68": 6,
-      "69": 6,
-      "70": 6,
+      "0": 14,
+      "1": 6,
+      "2": 62,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 55,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 220,
+      "11": 6,
+      "12": 6,
+      "13": 6,
+      "14": 220,
+      "15": 214,
+      "16": 214,
+      "17": 214,
+      "18": 214,
+      "19": 116,
+      "20": 3,
+      "21": 3,
+      "22": 3,
+      "23": 2,
+      "24": 2,
+      "25": 2,
+      "26": 3,
+      "27": 3,
+      "28": 3,
+      "29": 3,
+      "30": 3,
+      "31": 3,
+      "32": 3,
+      "33": 3,
+      "34": 3,
+      "35": 3,
+      "36": 3,
+      "37": 3,
+      "38": 3,
+      "39": 3,
+      "40": 3,
+      "41": 3,
+      "42": 3,
+      "43": 3,
+      "44": 3,
+      "45": 3,
+      "46": 3,
+      "47": 3,
+      "48": 3,
+      "49": 3,
+      "50": 3,
+      "51": 116,
+      "52": 113,
+      "53": 113,
+      "54": 113,
+      "55": 113,
+      "56": 113,
+      "57": 113,
+      "58": 113,
+      "59": 14,
+      "60": 3,
+      "61": 3,
+      "62": 3,
+      "63": 3,
+      "64": 3,
+      "65": 3,
+      "66": 3,
+      "67": 3,
+      "68": 3,
+      "69": 3,
+      "70": 3,
       "71": 0,
-      "72": 6,
-      "73": 6,
-      "74": 2,
-      "75": 2,
-      "76": 2,
-      "77": 2,
-      "78": 4,
-      "79": 4,
-      "80": 4,
-      "81": 2,
-      "82": 2,
-      "83": 2,
-      "84": 2,
-      "85": 6,
-      "86": 4,
-      "87": 4,
-      "88": 24,
-      "89": 6,
-      "90": 24,
-      "91": 234,
-      "92": 6,
-      "93": 6,
-      "94": 6,
-      "95": 6,
-      "96": 6,
-      "97": 6,
-      "98": 6,
-      "99": 234,
-      "100": 228,
-      "101": 228,
-      "102": 228,
-      "103": 228,
-      "104": 24
+      "72": 3,
+      "73": 3,
+      "74": 1,
+      "75": 1,
+      "76": 1,
+      "77": 1,
+      "78": 2,
+      "79": 2,
+      "80": 2,
+      "81": 1,
+      "82": 1,
+      "83": 1,
+      "84": 1,
+      "85": 3,
+      "86": 2,
+      "87": 2,
+      "88": 14,
+      "89": 3,
+      "90": 14,
+      "91": 117,
+      "92": 3,
+      "93": 3,
+      "94": 3,
+      "95": 3,
+      "96": 3,
+      "97": 3,
+      "98": 3,
+      "99": 117,
+      "100": 114,
+      "101": 114,
+      "102": 114,
+      "103": 114,
+      "104": 14
     },
     "f": {
-      "0": 12,
-      "1": 124,
-      "2": 110,
-      "3": 440,
-      "4": 232,
-      "5": 4,
-      "6": 24,
-      "7": 6,
-      "8": 6,
-      "9": 2,
-      "10": 4,
-      "11": 2,
-      "12": 2,
-      "13": 6,
-      "14": 4,
-      "15": 6,
-      "16": 234
+      "0": 6,
+      "1": 62,
+      "2": 55,
+      "3": 220,
+      "4": 116,
+      "5": 2,
+      "6": 14,
+      "7": 3,
+      "8": 3,
+      "9": 1,
+      "10": 2,
+      "11": 1,
+      "12": 1,
+      "13": 3,
+      "14": 2,
+      "15": 3,
+      "16": 117
     },
     "b": {
       "0": [
-        4,
-        120
+        2,
+        60
       ],
       "1": [
-        2,
-        108
+        1,
+        54
       ],
       "2": [
-        12,
-        428
+        6,
+        214
       ],
       "3": [
-        428,
-        12
+        214,
+        6
       ],
       "4": [
-        6,
-        226
+        3,
+        113
       ],
       "5": [
-        226,
-        6
+        113,
+        3
       ],
       "6": [
         0,
-        6
+        3
       ],
       "7": [
-        2,
-        4
+        1,
+        2
       ],
       "8": [
-        2,
-        2
+        1,
+        1
       ],
       "9": [
-        2,
-        4
+        1,
+        2
       ],
       "10": [
-        2,
-        4
+        1,
+        2
       ],
       "11": [
-        2,
-        4
+        1,
+        2
       ],
       "12": [
-        2,
-        4
+        1,
+        2
       ],
       "13": [
-        6,
-        6
+        3,
+        3
       ],
       "14": [
-        6,
-        228
+        3,
+        114
       ],
       "15": [
-        228,
-        6
+        114,
+        3
       ],
       "16": [
-        120,
-        108
+        60,
+        54
       ],
       "17": [
-        226,
-        2
+        113,
+        1
       ]
     },
     "inputSourceMap": {
@@ -14719,21 +14719,21 @@
         "encapsulation"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\sessions\\components\\form\\form.component.ts",
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\pages\\sessions\\components\\form\\form.component.html"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\sessions\\components\\form\\form.component.ts",
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\pages\\sessions\\components\\form\\form.component.html"
       ],
       "sourcesContent": [
-        "import { CommonModule } from '@angular/common';\nimport { Component, DestroyRef, OnInit, inject } from '@angular/core';\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\nimport { MatSnackBar } from '@angular/material/snack-bar';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Session } from '../../../../core/models/session.interface';\nimport { SessionApiService } from '../../../../core/service/session-api.service';\nimport { SessionService } from '../../../../core/service/session.service';\nimport { TeacherService } from '../../../../core/service/teacher.service';\nimport { MaterialModule } from '../../../../shared/material.module';\n\n@Component({\n  selector: 'app-form',\n  imports: [CommonModule, MaterialModule],\n  templateUrl: './form.component.html',\n  styleUrls: ['./form.component.scss']\n})\nexport class FormComponent implements OnInit {\n  private route = inject(ActivatedRoute);\n  private fb = inject(FormBuilder);\n  private matSnackBar = inject(MatSnackBar);\n  private sessionApiService = inject(SessionApiService);\n  private sessionService = inject(SessionService);\n  private teacherService = inject(TeacherService);\n  private router = inject(Router);\n  private destroyRef = inject(DestroyRef);\n\n  public onUpdate = false;\n  public sessionForm: FormGroup | undefined;\n  public teachers$ = this.teacherService.all();\n  private id: string | undefined;\n\n  ngOnInit(): void {\n    if (!this.sessionService.sessionInformation!.admin) {\n      this.router.navigate(['/sessions']);\n    }\n\n    const url = this.router.url;\n    if (url.includes('update')) {\n      this.onUpdate = true;\n      this.id = this.route.snapshot.paramMap.get('id')!;\n      this.sessionApiService\n        .detail(this.id)\n        .pipe(takeUntilDestroyed(this.destroyRef))\n        .subscribe((session: Session) => this.initForm(session));\n    } else {\n      this.initForm();\n    }\n  }\n\n  public submit(): void {\n    const session = this.sessionForm?.value as Session;\n\n    if (!this.onUpdate) {\n      this.sessionApiService\n        .create(session)\n        .pipe(takeUntilDestroyed(this.destroyRef))\n        .subscribe(() => this.exitPage('Session created !'));\n    } else {\n      this.sessionApiService\n        .update(this.id!, session)\n        .pipe(takeUntilDestroyed(this.destroyRef))\n        .subscribe(() => this.exitPage('Session updated !'));\n    }\n  }\n\n  private initForm(session?: Session): void {\n    this.sessionForm = this.fb.group({\n      name: [session ? session.name : '', [Validators.required]],\n      date: [session ? new Date(session.date).toISOString().split('T')[0] : '', [Validators.required]],\n      teacher_id: [session ? session.teacher_id : '', [Validators.required]],\n      description: [session ? session.description : '', [Validators.required, Validators.max(2000)]]\n    });\n  }\n\n  private exitPage(message: string): void {\n    this.matSnackBar.open(message, 'Close', { duration: 3000 });\n    this.router.navigate(['sessions']);\n  }\n}\n",
+        "import { CommonModule } from '@angular/common';\r\nimport { Component, DestroyRef, OnInit, inject } from '@angular/core';\r\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\nimport { MatSnackBar } from '@angular/material/snack-bar';\r\nimport { ActivatedRoute, Router } from '@angular/router';\r\nimport { Session } from '../../../../core/models/session.interface';\r\nimport { SessionApiService } from '../../../../core/service/session-api.service';\r\nimport { SessionService } from '../../../../core/service/session.service';\r\nimport { TeacherService } from '../../../../core/service/teacher.service';\r\nimport { MaterialModule } from '../../../../shared/material.module';\r\n\r\n@Component({\r\n  selector: 'app-form',\r\n  imports: [CommonModule, MaterialModule],\r\n  templateUrl: './form.component.html',\r\n  styleUrls: ['./form.component.scss']\r\n})\r\nexport class FormComponent implements OnInit {\r\n  private route = inject(ActivatedRoute);\r\n  private fb = inject(FormBuilder);\r\n  private matSnackBar = inject(MatSnackBar);\r\n  private sessionApiService = inject(SessionApiService);\r\n  private sessionService = inject(SessionService);\r\n  private teacherService = inject(TeacherService);\r\n  private router = inject(Router);\r\n  private destroyRef = inject(DestroyRef);\r\n\r\n  public onUpdate = false;\r\n  public sessionForm: FormGroup | undefined;\r\n  public teachers$ = this.teacherService.all();\r\n  private id: string | undefined;\r\n\r\n  ngOnInit(): void {\r\n    if (!this.sessionService.sessionInformation!.admin) {\r\n      this.router.navigate(['/sessions']);\r\n    }\r\n\r\n    const url = this.router.url;\r\n    if (url.includes('update')) {\r\n      this.onUpdate = true;\r\n      this.id = this.route.snapshot.paramMap.get('id')!;\r\n      this.sessionApiService\r\n        .detail(this.id)\r\n        .pipe(takeUntilDestroyed(this.destroyRef))\r\n        .subscribe((session: Session) => this.initForm(session));\r\n    } else {\r\n      this.initForm();\r\n    }\r\n  }\r\n\r\n  public submit(): void {\r\n    const session = this.sessionForm?.value as Session;\r\n\r\n    if (!this.onUpdate) {\r\n      this.sessionApiService\r\n        .create(session)\r\n        .pipe(takeUntilDestroyed(this.destroyRef))\r\n        .subscribe(() => this.exitPage('Session created !'));\r\n    } else {\r\n      this.sessionApiService\r\n        .update(this.id!, session)\r\n        .pipe(takeUntilDestroyed(this.destroyRef))\r\n        .subscribe(() => this.exitPage('Session updated !'));\r\n    }\r\n  }\r\n\r\n  private initForm(session?: Session): void {\r\n    this.sessionForm = this.fb.group({\r\n      name: [session ? session.name : '', [Validators.required]],\r\n      date: [session ? new Date(session.date).toISOString().split('T')[0] : '', [Validators.required]],\r\n      teacher_id: [session ? session.teacher_id : '', [Validators.required]],\r\n      description: [session ? session.description : '', [Validators.required, Validators.max(2000)]]\r\n    });\r\n  }\r\n\r\n  private exitPage(message: string): void {\r\n    this.matSnackBar.open(message, 'Close', { duration: 3000 });\r\n    this.router.navigate(['sessions']);\r\n  }\r\n}\r\n",
         "<div class=\"create m3\">\r\n  <mat-card>\r\n    <mat-card-title>\r\n      <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <button mat-icon-button routerLink=\"/sessions\">\r\n          <mat-icon>arrow_back</mat-icon>\r\n        </button>\r\n\r\n        @if (!onUpdate) {\r\n          <h1>Create session</h1>\r\n        } @else {\r\n          <h1>Update session</h1>\r\n        }\r\n      </div>\r\n    </mat-card-title>\r\n\r\n    @if (sessionForm) {\r\n      <mat-card-content>\r\n        <form class=\"mt2\" fxLayout=\"column\" [formGroup]=\"sessionForm\" (ngSubmit)=\"submit()\">\r\n          <mat-form-field appearance=\"outline\" class=\"\" fxFlex>\r\n            <mat-label>Name</mat-label>\r\n            <input matInput formControlName=\"name\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field appearance=\"outline\" fxFlex>\r\n            <mat-label>Date</mat-label>\r\n            <input matInput type=\"date\" formControlName=\"date\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field appearance=\"outline\">\r\n            <mat-label>Teacher</mat-label>\r\n            <mat-select ngDefaultControl formControlName=\"teacher_id\">\r\n              @for (teacher of (teachers$ | async); track teacher.id) {\r\n                <mat-option [value]=\"teacher.id\">\r\n                  {{teacher.firstName}} {{teacher.lastName}}\r\n                </mat-option>\r\n              }\r\n            </mat-select>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field appearance=\"outline\" fxFlex>\r\n            <mat-label>Description</mat-label>\r\n            <textarea matInput rows=\"8\" formControlName=\"description\"></textarea>\r\n          </mat-form-field>\r\n\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n            <button mat-raised-button color=\"primary\" type=\"submit\" [disabled]=\"sessionForm.invalid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </form>\r\n      </mat-card-content>\r\n    }\r\n  </mat-card>\r\n</div>\r\n"
       ],
       "mappings": "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",
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f036b87055b0a17d69c577da548f48267e227839"
+    "hash": "b914de0714b6a03a21b0daba1f4ab00026af0ccd"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\app.routes.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\app.routes.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\app.routes.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\app.routes.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -14749,7 +14749,7 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 24
+      "0": 14
     },
     "f": {},
     "b": {},
@@ -14776,7 +14776,7 @@
         "title"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\app.routes.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\app.routes.ts"
       ],
       "sourcesContent": [
         "import { Routes } from '@angular/router';\r\nimport { UnauthGuard } from \"./guards/unauth.guard\";\r\nimport { AuthGuard } from \"./guards/auth.guard\";\r\nimport { MeComponent } from \"./components/me/me.component\";\r\nimport { NotFoundComponent } from \"./pages/not-found/not-found.component\";\r\nimport { LoginComponent } from \"./pages/login/login.component\";\r\nimport { RegisterComponent } from \"./pages/register/register.component\";\r\nimport { ListComponent } from \"./pages/sessions/components/list/list.component\";\r\nimport { DetailComponent } from \"./pages/sessions/components/detail/detail.component\";\r\nimport { FormComponent } from \"./pages/sessions/components/form/form.component\";\r\n\r\nexport const routes: Routes = [\r\n  {\r\n    path: '',\r\n    pathMatch: 'full',\r\n    redirectTo: 'login',\r\n  },\r\n  {\r\n    path: 'register',\r\n    canActivate: [UnauthGuard],\r\n    component: RegisterComponent\r\n  },\r\n  {\r\n    path: 'login',\r\n    canActivate: [UnauthGuard],\r\n    component: LoginComponent\r\n  },\r\n  {\r\n    path: 'sessions',\r\n    canActivate: [AuthGuard],\r\n    children: [\r\n      {\r\n        path: '',\r\n        component: ListComponent,\r\n        data: { title: 'Sessions' },\r\n      },\r\n      {\r\n        path: 'detail/:id',\r\n        component: DetailComponent,\r\n        data: { title: 'Sessions - detail' },\r\n      },\r\n      {\r\n        path: 'create',\r\n        component: FormComponent,\r\n        data: { title: 'Sessions - create' },\r\n      },\r\n\r\n      {\r\n        path: 'update/:id',\r\n        component: FormComponent,\r\n        data: { title: 'Sessions - update' },\r\n      },\r\n      ]\r\n  },\r\n  {\r\n    path: 'me',\r\n    canActivate: [AuthGuard],\r\n    component: MeComponent\r\n  },\r\n  { path: '404', component: NotFoundComponent },\r\n  { path: '**', redirectTo: '404' },\r\n];\r\n\r\n\r\n"
@@ -14785,10 +14785,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f93489e36411289ccb12c0d1b824034bc2d4f277"
+    "hash": "9ae80f74bd7e07a6b76703880d702c57311f8b6e"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\interceptors\\customJwtInterceptorFn.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\interceptors\\customJwtInterceptorFn.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\interceptors\\customJwtInterceptorFn.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\interceptors\\customJwtInterceptorFn.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -14896,18 +14896,18 @@
       }
     },
     "s": {
-      "0": 82,
-      "1": 82,
-      "2": 58,
-      "3": 82
+      "0": 57,
+      "1": 57,
+      "2": 43,
+      "3": 57
     },
     "f": {
-      "0": 82
+      "0": 57
     },
     "b": {
       "0": [
-        58,
-        24
+        43,
+        14
       ]
     },
     "inputSourceMap": {
@@ -14927,7 +14927,7 @@
         "token"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\interceptors\\customJwtInterceptorFn.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\interceptors\\customJwtInterceptorFn.ts"
       ],
       "sourcesContent": [
         "import { HttpEvent, HttpHandlerFn, HttpRequest } from \"@angular/common/http\";\r\nimport { Observable } from \"rxjs\";\r\nimport { SessionService } from \"../core/service/session.service\";\r\nimport { inject } from \"@angular/core\";\r\n\r\nexport function customJwtInterceptorFn(request: HttpRequest<unknown>, next: HttpHandlerFn): Observable<HttpEvent<unknown>> {\r\n  const sessionService = inject(SessionService);\r\n  if (sessionService.isLogged) {\r\n    request = request.clone({\r\n      setHeaders: {\r\n        Authorization: `Bearer ${sessionService.sessionInformation!.token}`,\r\n      },\r\n    });\r\n  }\r\n  return next(request);\r\n}\r\n"
@@ -14936,10 +14936,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "62a80f144fd3d280b9040d52c6559aedab867707"
+    "hash": "dd882ca1b2a7d3626d4ead08028f803f875f7885"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\app.config.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\app.config.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\app.config.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\app.config.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -14955,7 +14955,7 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 24
+      "0": 14
     },
     "f": {},
     "b": {},
@@ -14973,7 +14973,7 @@
         "eventCoalescing"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\app.config.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\app.config.ts"
       ],
       "sourcesContent": [
         "import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';\r\nimport { provideRouter } from '@angular/router';\r\nimport { routes } from './app.routes';\r\nimport { provideHttpClient, withInterceptors } from '@angular/common/http';\r\nimport { customJwtInterceptorFn } from \"./interceptors/customJwtInterceptorFn\";\r\n\r\nexport const appConfig: ApplicationConfig = {\r\n  providers: [\r\n    provideHttpClient(\r\n      withInterceptors([customJwtInterceptorFn]),\r\n    ),\r\n    provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]\r\n\r\n};\r\n"
@@ -14982,10 +14982,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "77830c9d9ffb8e94aad1eb5d161d3a7308e46d26"
+    "hash": "72b2e0c76aa40c5bf424eb44ccb74479f8418c31"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\app.component.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\app.component.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\app.component.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\app.component.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -15895,89 +15895,89 @@
       }
     },
     "s": {
-      "0": 325,
-      "1": 18,
-      "2": 18,
-      "3": 18,
-      "4": 18,
-      "5": 18,
-      "6": 18,
-      "7": 18,
-      "8": 18,
-      "9": 18,
+      "0": 186,
+      "1": 11,
+      "2": 11,
+      "3": 11,
+      "4": 11,
+      "5": 11,
+      "6": 11,
+      "7": 11,
+      "8": 11,
+      "9": 11,
       "10": 0,
       "11": 0,
       "12": 0,
-      "13": 18,
-      "14": 18,
-      "15": 774,
-      "16": 24,
-      "17": 24,
-      "18": 24,
-      "19": 24,
-      "20": 24,
-      "21": 24,
-      "22": 24,
-      "23": 24,
-      "24": 24,
-      "25": 24,
-      "26": 1057,
+      "13": 11,
+      "14": 11,
+      "15": 447,
+      "16": 14,
+      "17": 14,
+      "18": 14,
+      "19": 14,
+      "20": 14,
+      "21": 14,
+      "22": 14,
+      "23": 14,
+      "24": 14,
+      "25": 14,
+      "26": 608,
       "27": 0,
       "28": 0,
-      "29": 24,
-      "30": 24,
-      "31": 24,
-      "32": 1081,
-      "33": 24,
-      "34": 24,
-      "35": 24,
-      "36": 24,
-      "37": 24,
-      "38": 24,
-      "39": 24,
-      "40": 24,
-      "41": 24,
-      "42": 24,
-      "43": 1081,
-      "44": 1057,
-      "45": 1057,
-      "46": 24
+      "29": 14,
+      "30": 14,
+      "31": 14,
+      "32": 622,
+      "33": 14,
+      "34": 14,
+      "35": 14,
+      "36": 14,
+      "37": 14,
+      "38": 14,
+      "39": 14,
+      "40": 14,
+      "41": 14,
+      "42": 14,
+      "43": 622,
+      "44": 608,
+      "45": 608,
+      "46": 14
     },
     "f": {
-      "0": 325,
+      "0": 186,
       "1": 0,
-      "2": 774,
-      "3": 24,
-      "4": 24,
-      "5": 1057,
+      "2": 447,
+      "3": 14,
+      "4": 14,
+      "5": 608,
       "6": 0,
-      "7": 24,
-      "8": 1081
+      "7": 14,
+      "8": 622
     },
     "b": {
       "0": [
-        18,
-        307
+        11,
+        175
       ],
       "1": [
-        24,
-        750
+        14,
+        433
       ],
       "2": [
-        24,
-        24
+        14,
+        14
       ],
       "3": [
-        24,
-        1057
+        14,
+        608
       ],
       "4": [
-        1057,
-        24
+        608,
+        14
       ],
       "5": [
-        307,
-        750
+        175,
+        433
       ]
     },
     "inputSourceMap": {
@@ -16036,8 +16036,8 @@
         "styles"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\app.component.ts",
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\app\\app.component.html"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\app.component.ts",
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\app\\app.component.html"
       ],
       "sourcesContent": [
         "import { Component, OnInit, inject } from '@angular/core';\r\nimport {Router, RouterModule, RouterOutlet} from '@angular/router';\r\nimport { Observable } from 'rxjs';\r\nimport { AuthService } from './core/service/auth.service';\r\nimport { SessionService } from './core/service/session.service';\r\nimport {CommonModule} from \"@angular/common\";\r\nimport {MaterialModule} from \"./shared/material.module\";\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [CommonModule, MaterialModule, RouterOutlet, RouterModule],\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  private authService = inject(AuthService);\r\n  private router = inject(Router);\r\n  private sessionService = inject(SessionService);\r\n\r\n  public $isLogged(): Observable<boolean> {\r\n    return this.sessionService.$isLogged();\r\n  }\r\n\r\n  public logout(): void {\r\n    this.sessionService.logOut();\r\n    this.router.navigate([''])\r\n  }\r\n}\r\n",
@@ -16047,10 +16047,10 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f671cc95cae9dfed5c5810aab4c52c842fb7121a"
+    "hash": "ea08b53ff6581bc7805970d9ec8beb639809c752"
   },
-  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\main.ts": {
-    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\main.ts",
+  "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\main.ts": {
+    "path": "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\main.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -16101,7 +16101,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 24,
+      "0": 14,
       "1": 0
     },
     "f": {
@@ -16120,7 +16120,7 @@
         "error"
       ],
       "sources": [
-        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\Partie4\\front\\src\\main.ts"
+        "C:\\Users\\bluca\\Desktop\\OpenClassRoom\\github\\Partie4\\src\\main.ts"
       ],
       "sourcesContent": [
         "import { bootstrapApplication } from '@angular/platform-browser';\r\nimport { appConfig } from './app/app.config';\r\nimport { AppComponent } from './app/app.component';\r\n\r\nbootstrapApplication(AppComponent, appConfig)\r\n  .catch((err) => console.error(err));\r\n"
@@ -16129,6 +16129,6 @@
       "ignoreList": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "38f4d200058495c170dad0f9edcb61769d054a84"
+    "hash": "0421dd5dc4fdfff68589e05ac095cd7fe8afd9a1"
   }
 }

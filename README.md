@@ -46,3 +46,11 @@ Launching test:
 for following change:
 
 > npm run test:watch
+
+Generate coverage report :
+
+> npm run test -- --coverage
+
+Report is available here:
+
+> coverage\unit

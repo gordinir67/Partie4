@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe('Auth screens (Login & Register)', () => {
   it('Login: success redirects to /sessions', () => {
     cy.intercept('POST', '**/api/auth/login', {

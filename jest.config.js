@@ -13,8 +13,8 @@ module.exports = {
   coveragePathIgnorePatterns: ['<rootDir>/node_modules/'],
 
   collectCoverage: true,
-  coverageDirectory: './coverage/jest',
-  coverageReporters: ['text', 'lcov', 'html'],
+coverageDirectory: 'coverage/unit',
+coverageReporters: ['html', 'lcov', 'text-summary'],
 
   collectCoverageFrom: [
     '<rootDir>/src/app/**/*.ts',
